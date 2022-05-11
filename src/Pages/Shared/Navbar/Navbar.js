@@ -5,7 +5,7 @@ const Navbar = () => {
   const navigations = (
     <>
       <li>
-        <Link to="#">Home</Link>
+        <Link to="/home">Home</Link>
       </li>
       <li tabIndex="0">
         <Link to="#">
@@ -30,16 +30,16 @@ const Navbar = () => {
         </ul>
       </li>
       <li>
-        <Link to="#">About Us</Link>
+        <Link to="/about">About Us</Link>
       </li>
       <li>
-        <Link to="#">Campaign</Link>
+        <Link to="/campaign">Campaign</Link>
       </li>
       <li>
-        <Link to="#">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
       <li>
-        <Link to="#">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
@@ -72,7 +72,7 @@ const Navbar = () => {
               {navigations}
             </ul>
           </div>
-          <Link to="#" class="btn btn-ghost font-extrabold text-xl">
+          <Link to="/" class="btn btn-ghost font-extrabold text-xl">
             <span>Blood</span>
             <span className="text-primary"> Buddies</span>
           </Link>
