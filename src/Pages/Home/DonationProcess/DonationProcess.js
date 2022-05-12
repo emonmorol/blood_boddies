@@ -33,21 +33,23 @@ const DonationProcess = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto my-24 flex flex-col items-center">
-      <div className="flex flex-col">
-        <h2 class="text-3xl lg:text-5xl font-bold text-gray-600 uppercase text-center">
-          DONATION PROCESS
-        </h2>
-        <hr className="border w-[10%] my-3 border-primary mx-auto" />
-        <span className="my-3 px-5 text-center">
-          Campaigns to encourage new donors to join and existing to continue to
-          give blood.
-        </span>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5 px-3">
-        {stepInfo.map((singleStep) => (
-          <DonationProcessCard key={singleStep.id} singleStep={singleStep} />
-        ))}
+    <div className="bg-gray-100">
+      <div className="max-w-7xl mx-auto my-24 flex flex-col items-center">
+        <div className="flex flex-col">
+          <h2 class="text-3xl lg:text-5xl font-bold text-gray-600 uppercase text-center">
+            DONATION PROCESS
+          </h2>
+          <hr className="border w-[10%] my-3 border-primary mx-auto" />
+          <span className="my-3 px-5 text-center">
+            Campaigns to encourage new donors to join and existing to continue
+            to give blood.
+          </span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5 px-3">
+          {stepInfo.map((singleStep) => (
+            <DonationProcessCard key={singleStep.id} singleStep={singleStep} />
+          ))}
+        </div>
       </div>
     </div>
   );

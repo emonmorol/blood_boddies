@@ -1,0 +1,44 @@
+.count-banner {
+  background-image: url(../../../Images/counter-bg.jpg);
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.count-inside-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.count-inside-banner h1 {
+  color: rgb(232, 232, 232);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+}
+.count-inside-banner a {
+  background-color: #37caff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+}
+.inside-banner a:hover {
+  background-color: #00b3ff;
+}
+
+/* responsive for mobile phone */
+@media screen and (max-width: 640px) {
+  .count-banner {
+    min-height: 90vh;
+  }
+}

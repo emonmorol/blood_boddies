@@ -22,8 +22,8 @@ function App() {
           <Route path="/campaign" element={<Campaign />} />
           <Route path="/blogs" element={<Blogs />} />
         </Routes>
+        <Footer />
       </Navbar>
-      {/* <Footer /> */}
     </div>
   );
 }
