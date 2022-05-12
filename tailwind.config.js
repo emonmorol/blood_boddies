@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "blood-banner": "url('/src/Images/banner.png')",
+        "blood-donar": "url('/src/Images/blood-donar.png')",
       },
     },
   },
