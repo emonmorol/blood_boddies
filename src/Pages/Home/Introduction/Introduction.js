@@ -5,7 +5,7 @@ import "./Introduction.css";
 
 const Introduction = () => {
   return (
-    <div className=" max-w-7xl mx-auto my-20">
+    <div className="max-w-7xl mx-auto my-20 px-3">
       <div class="card lg:card-side bg-gray-100 shadow-xl">
         <div class="card-body justify-center flex-1">
           <h2 class="text-4xl font-semibold text-gray-600">Who We Are?</h2>
@@ -15,30 +15,30 @@ const Introduction = () => {
             members in the changing health care system.
           </span>
           <div className="leading-10">
-            <p className="intro-point">
+            <p className="intro-point mb-2 text-sm  md:text-base lg:text-base">
               <BeenhereIcon className="mr-2 intro-icon" />{" "}
               <span>Specialist blood donors and clinical supervision.</span>
             </p>
-            <p className="intro-point">
+            <p className="intro-point mb-2 text-sm  md:text-base lg:text-base">
               <BeenhereIcon className="mr-2 intro-icon" />{" "}
               <span>Increasing communication with our members.</span>
             </p>
-            <p className="intro-point">
+            <p className="intro-point mb-2 text-sm  md:text-base lg:text-base">
               <BeenhereIcon className="mr-2 intro-icon" />{" "}
               <span>High quality assessment, diagnosis and treatment.</span>
             </p>
-            <p className="intro-point">
+            <p className="intro-point mb-2 text-sm  md:text-base lg:text-base">
               <BeenhereIcon className="mr-2 intro-icon" />{" "}
               <span>Examine critically to ensure alignment.</span>
             </p>
-            <p className="intro-point">
+            <p className="intro-point mb-2 text-sm  md:text-base lg:text-base">
               <BeenhereIcon className="mr-2 intro-icon" />{" "}
               <span>he extra care of a multi-disciplinary team.</span>
             </p>
           </div>
         </div>
-        <figure className="flex-1">
-          <img src={blood} alt="Album" />
+        <figure className="flex-1 w-full">
+          <img className="w-full" src={blood} alt="Album" />
         </figure>
       </div>
     </div>

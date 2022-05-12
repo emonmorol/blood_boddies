@@ -50,7 +50,12 @@ const Navbar = ({ children }) => {
       <div class="drawer-content flex flex-col">
         <div className="bg-base-100 shadow  sticky top-0 z-50">
           <div class="w-full navbar bg-base-100 max-w-7xl mx-auto">
-            <div class="flex-1 px-2 mx-2">Navbar Title</div>
+            <div class="flex-1 px-2 mx-2">
+              <Link to="/" class="btn btn-ghost font-extrabold text-xl">
+                <span>Blood</span>
+                <span className="text-primary"> Buddies</span>{" "}
+              </Link>
+            </div>
             <div class="flex-none lg:hidden">
               <label for="my-drawer-3" class="btn btn-square btn-ghost">
                 <svg
