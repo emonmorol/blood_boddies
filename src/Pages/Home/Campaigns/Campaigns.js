@@ -5,10 +5,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import CampaignCard from "./CampaignCard";
-import event1 from "../../../Images/event_1.jpg";
-import event2 from "../../../Images/event_2.jpg";
-import event3 from "../../../Images/event_3.jpg";
-import event4 from "../../../Images/event_4.jpg";
+import event1 from "../../../Images/event_1.png";
+import event2 from "../../../Images/event_2.png";
+import event3 from "../../../Images/event_3.png";
+import event4 from "../../../Images/event_4.png";
+import "./Campaigns.css";
 
 const Campaigns = () => {
   const campaigns = [
@@ -55,7 +56,7 @@ const Campaigns = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto my-24 flex flex-col items-center">
+    <div className="max-w-7xl mx-auto my-24 flex flex-col items-center w-full">
       <div className="flex flex-col -mb-10">
         <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
           Our Campaigns
@@ -67,10 +68,10 @@ const Campaigns = () => {
           various occasions.
         </span>
       </div>
-      <div class="relative card-body w-full">
+      <div class="card-body w-full">
         <div>
           <Swiper
-            slidesPerView={2}
+            slidesPerView={1}
             spaceBetween={30}
             loop={true}
             pagination={{

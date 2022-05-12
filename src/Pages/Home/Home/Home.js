@@ -13,7 +13,7 @@ const Home = () => {
       <RequestAppointment />
       <Introduction />
       <DonarView />
-      {/* <Campaigns /> */}
+      <Campaigns />
       {/* <DonationProcess /> */}
     </>
   );
