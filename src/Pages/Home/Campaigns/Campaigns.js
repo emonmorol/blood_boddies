@@ -57,13 +57,14 @@ const Campaigns = () => {
   return (
     <div className="max-w-7xl mx-auto my-24 flex flex-col items-center">
       <div className="flex flex-col -mb-10">
-        <h2 class="text-5xl font-bold text-gray-600 uppercase">
+        <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
           Our Campaigns
         </h2>
-        <hr className="border w-[10%] my-5 border-primary" />
-        <span className="my-5">
-          Blood Buddies is for public donation center with blood donation
-          members in the changing health care system.
+        <hr className="border w-[10%] my-3 border-primary  mx-auto" />
+        <span className="my-3 text-center">
+          Encourage new donors to join and continue to give blood. We have total
+          sixty thousands donor centers and visit thousands of other venues on
+          various occasions.
         </span>
       </div>
       <div class="relative card-body w-full">
@@ -87,7 +88,7 @@ const Campaigns = () => {
           </Swiper>
         </div>
       </div>
-      <button className="btn mb-5 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary transition-all duration-300">
+      <button className="btn mb-5 border-0 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary hover:bg-gray-600 transition-all duration-300">
         Load All campaigns
       </button>
     </div>

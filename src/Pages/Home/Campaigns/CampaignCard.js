@@ -4,7 +4,7 @@ const CampaignCard = ({ campaign }) => {
   //   console.dir(campaign);
   const { title, detail, image, date, place, time } = campaign;
   return (
-    <div class="card card-side bg-base-100 border cursor-grab rounded-2xl overflow-hidden my-10">
+    <div class="card card-side border cursor-grab rounded-2xl overflow-hidden my-10 bg-gray-100">
       <div className="w-1/3">
         <img className="object-cover" src={image} alt="Movie" />
       </div>

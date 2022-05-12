@@ -20,15 +20,15 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="bg-blood-banner bg-no-repeat bg-cover w-full min-h-screen flex justify-center items-center">
-            <div className="relative bg-white bg-opacity-80 w-3/5">
+          <div className="bg-blood-banner bg-no-repeat px-3 bg-cover w-full min-h-screen flex justify-center items-center">
+            <div className="relative bg-white bg-opacity-20 lg:bg-opacity-80 lg:w-3/5">
               <div className="absolute bottom-0 left-0 w-40 h-40 border-b-[6px] border-l-[6px] border-primary"></div>
               <div className="absolute top-0 right-0 w-40 h-40 border-t-[6px] border-r-[6px] border-primary"></div>
               <div className="p-16 flex flex-col justify-center items-center">
-                <p className="text-center uppercase font-bold text-black text-4xl tracking-widest">
+                <p className="text-center uppercase font-bold text-base-200 lg:text-black text-3xl tracking-widest">
                   Donate blood , save life !
                 </p>
-                <p className="text-center uppercase font-bold text-black text-6xl my-10 leading-[80px]">
+                <p className="text-center uppercase font-bold text-base-200 lg:text-black text-5xl lg:text-6xl my-10 lg:leading-[80px]">
                   YOUR donation can bring smile at others face
                 </p>
                 <button className="btn btn-primary font-bold ">
@@ -40,15 +40,15 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-blood-banner bg-no-repeat bg-cover w-full min-h-screen flex justify-center items-center">
-            <div className="relative bg-white bg-opacity-80 w-3/5">
+          <div className="bg-blood-banner bg-no-repeat px-3 bg-cover w-full min-h-screen flex justify-center items-center">
+            <div className="relative bg-white bg-opacity-20 lg:bg-opacity-80 lg:w-3/5">
               <div className="absolute bottom-0 left-0 w-40 h-40 border-b-[6px] border-l-[6px] border-primary"></div>
               <div className="absolute top-0 right-0 w-40 h-40 border-t-[6px] border-r-[6px] border-primary"></div>
               <div className="p-16 flex flex-col justify-center items-center">
-                <p className="text-center  uppercase font-bold text-black text-4xl tracking-widest">
+                <p className="text-center  uppercase font-bold text-base-200 lg:text-black text-3xl tracking-widest">
                   Donate blood , save life !
                 </p>
-                <p className="text-center uppercase font-bold text-black text-6xl my-10 leading-[80px]">
+                <p className="text-center uppercase font-bold text-base-200 lg:text-black text-5xl lg:text-6xl my-10 lg:leading-[80px]">
                   Donate Your Blood And Inspires to others
                 </p>
                 <button className="btn btn-primary font-bold ">
