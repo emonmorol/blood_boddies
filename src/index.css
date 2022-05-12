@@ -14,3 +14,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.error {
+  margin: 5px 15px;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  color: red;
+}
