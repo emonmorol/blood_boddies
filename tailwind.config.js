@@ -6,6 +6,7 @@ module.exports = {
         "blood-banner": "url('/src/Images/banner.png')",
         "blood-donar": "url('/src/Images/blood-donar.png')",
         "counter-bg": "url('/src/Images/counter-bg.jpg')",
+        "join-us": "url('/src/Images/joinus_bg.jpg')",
       },
     },
   },

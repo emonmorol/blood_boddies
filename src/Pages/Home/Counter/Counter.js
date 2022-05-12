@@ -8,7 +8,7 @@ const Counter = () => {
     <div className="count-banner-content">
       <div className="count-banner bg-opacity-50">
         <div className="count-inside-banner">
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-1 py-10 gap-5 md:grid-cols-2 lg:grid-cols-4">
             <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 flex flex-col justify-center">
               <div className="text-6xl py-5 mb-2 px-[1.45rem] text-gray-500 hover:text-primary  cursor-text mx-auto transition-all duration-300">
                 <i class="fa-solid fa-medal"></i>

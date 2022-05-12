@@ -9,7 +9,6 @@ import event1 from "../../../Images/event_1.png";
 import event2 from "../../../Images/event_2.png";
 import event3 from "../../../Images/event_3.png";
 import event4 from "../../../Images/event_4.png";
-import "./Campaigns.css";
 
 const Campaigns = () => {
   const campaigns = [
