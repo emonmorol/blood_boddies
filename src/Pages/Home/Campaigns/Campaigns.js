@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 import CampaignCard from "./CampaignCard";
-import event1 from "../../../Images/event_1.png";
-import event2 from "../../../Images/event_2.png";
-import event3 from "../../../Images/event_3.png";
-import event4 from "../../../Images/event_4.png";
+import event1 from "../../../Images/event_1.jpg";
+import event2 from "../../../Images/event_2.jpg";
+import event3 from "../../../Images/event_3.jpg";
+import event4 from "../../../Images/event_4.jpg";
 
 const Campaigns = () => {
   const campaigns = [
@@ -55,30 +55,28 @@ const Campaigns = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto my-24 flex items-center">
-      <div className="flex flex-col">
+    <div className="max-w-7xl mx-auto my-24 flex flex-col items-center">
+      <div className="flex flex-col -mb-10">
         <h2 class="text-5xl font-bold text-gray-600 uppercase">
           Our Campaigns
         </h2>
         <hr className="border w-[10%] my-5 border-primary" />
-        <span className="my-5 w-[50ch]">
+        <span className="my-5">
           Blood Buddies is for public donation center with blood donation
           members in the changing health care system.
         </span>
-        <button className=" w-2/3 btn mb-5 rounded-full text-xl font-medium uppercase px-10 text-white  btn-primary transition-all duration-300">
-          Load All campaigns
-        </button>
       </div>
-      <div class="relative card-body w-1/2">
+      <div class="relative card-body w-full">
         <div>
           <Swiper
-            slidesPerView={1}
+            slidesPerView={2}
             spaceBetween={30}
             loop={true}
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            navigation={true}
+            modules={[Pagination, Navigation]}
             className="mySwiper"
           >
             {campaigns.map((campaign) => (
@@ -89,6 +87,9 @@ const Campaigns = () => {
           </Swiper>
         </div>
       </div>
+      <button className="btn mb-5 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary transition-all duration-300">
+        Load All campaigns
+      </button>
     </div>
   );
 };
