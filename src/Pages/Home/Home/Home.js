@@ -7,6 +7,7 @@ import DonationProcess from "../DonationProcess/DonationProcess";
 import Introduction from "../Introduction/Introduction";
 import ReqAppointmentForm from "../ReqAppointmentForm/ReqAppointmentForm";
 import RequestAppointment from "../RequestAppointment/RequestAppointment";
+import Volunteers from "../Volunteers/Volunteers";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <DonarView />
       <DonationProcess />
       <ReqAppointmentForm />
+      <Volunteers />
     </>
   );
 };
