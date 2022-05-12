@@ -1,0 +1,12 @@
+.intro-icon {
+  background-color: white;
+  color: #fe3c47;
+  padding: 5px;
+  border-radius: 50%;
+}
+.intro-point:hover .intro-icon {
+  border-radius: 70% 30% 30% 70%/60% 40% 60% 40%;
+  background-color: #fe3c47;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
