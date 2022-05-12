@@ -5,7 +5,7 @@ import "./Introduction.css";
 
 const Introduction = () => {
   return (
-    <div className=" max-w-7xl mx-auto my-10">
+    <div className=" max-w-7xl mx-auto my-20">
       <div class="card lg:card-side bg-gray-100 shadow-xl">
         <div class="card-body justify-center flex-1">
           <h2 class="text-4xl font-semibold text-gray-600">Who We Are?</h2>

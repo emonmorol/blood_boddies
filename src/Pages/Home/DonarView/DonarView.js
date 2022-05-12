@@ -57,14 +57,14 @@ const DonarView = () => {
   ];
 
   return (
-    <div className="relative ">
-      <div className="flex flex-col items-center justify-center bg-blood-donar bg-fixed bg-cover min-h-[70vh]">
+    <div className="">
+      <div className="relative flex flex-col items-center justify-center bg-blood-donar bg-fixed bg-cover min-h-[70vh]">
         <h2 className="text-2xl text-white">Awesome Words From Donors</h2>
         <hr className="border w-[5%] my-3 border-primary" />
         <h2 className="text-5xl font-extrabold text-white  mb-8">
           JOIN WITH US AND SAVE LIFE
         </h2>
-        <div className="absolute top-1/2 -translate-y-1/2 w-1/2">
+        <div className="absolute top-full -translate-y-1/2 w-1/2">
           <div class="card lg:card-side bg-base-100 shadow-xl">
             <figure className="w-1/2">
               <img src={viewImage} alt="Album" />
@@ -92,7 +92,13 @@ const DonarView = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center bg-gray-100 bg-fixed bg-cover min-h-[70vh]"></div>
+      <div className="flex justify-center items-end bg-gray-100 bg-fixed bg-cover min-h-[40vh]">
+        <div className="">
+          <button className="btn mb-5 rounded-full text-xl font-medium uppercase text-gray-200 px-10 btn-black hover:text-white  hover:bg-primary hover:border-primary transition-all duration-300">
+            Submit your opinion
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

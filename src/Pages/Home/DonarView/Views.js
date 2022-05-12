@@ -9,6 +9,8 @@ const Views = ({ view }) => {
         <h2 class="text-primary font-bold text-3xl uppercase text-center">
           {memberType} opinion
         </h2>
+        <hr className="border w-[10%] mx-auto my-3 border-primary" />
+
         <p className=" text-gray-600 text-lg my-10 text-center">
           <FormatQuoteIcon className=" rotate-[180deg] scale-150 mr-2" />
           <span>{viewContext}</span>
