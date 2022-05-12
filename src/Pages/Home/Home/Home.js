@@ -14,7 +14,7 @@ const Home = () => {
       <Introduction />
       <DonarView />
       <Campaigns />
-      {/* <DonationProcess /> */}
+      <DonationProcess />
     </>
   );
 };

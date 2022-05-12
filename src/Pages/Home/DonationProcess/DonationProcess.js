@@ -53,7 +53,7 @@ const DonationProcess = () => {
           give blood.
         </span>
       </div>
-      <div class="grid grid-cols-3 gap-5">
+      <div class="grid grid-cols-3 gap-5 my-5">
         {stepInfo.map((singleStep) => (
           <DonationProcessCard key={singleStep.id} singleStep={singleStep} />
         ))}
