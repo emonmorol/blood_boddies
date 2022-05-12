@@ -99,7 +99,7 @@ const DonarView = () => {
       <div className="flex justify-center items-end bg-gray-100 bg-fixed bg-cover min-h-[65vh] md:min-h-[50vh] lg:min-h-[40vh]">
         <div className="">
           <button className="btn mb-5 rounded-full text-xl font-medium uppercase text-gray-200 px-10 btn-black hover:text-white  hover:bg-primary hover:border-primary transition-all duration-300">
-            Submit your opinion
+            Share your opinion
           </button>
         </div>
       </div>

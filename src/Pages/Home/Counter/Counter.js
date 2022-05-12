@@ -14,7 +14,7 @@ const Counter = () => {
                 <i class="fa-solid fa-medal"></i>
               </div>
               <div className="text-center">
-                <CountUp start={0} end={1346} duration={3}>
+                <CountUp start={0} end={1346} duration={2}>
                   {({ countUpRef, start }) => (
                     <VisibilitySensor onChange={start} delayedCall>
                       <span
@@ -34,7 +34,7 @@ const Counter = () => {
                 <i class="fa-solid fa-users"></i>
               </div>
               <div className="text-center">
-                <CountUp start={0} end={3568} duration={3}>
+                <CountUp start={0} end={3568} duration={2}>
                   {({ countUpRef, start }) => (
                     <VisibilitySensor onChange={start} delayedCall>
                       <span
@@ -54,7 +54,7 @@ const Counter = () => {
                 <i class="fa-solid fa-stethoscope"></i>
               </div>
               <div className="text-center">
-                <CountUp start={0} end={3235} duration={3}>
+                <CountUp start={0} end={3235} duration={2}>
                   {({ countUpRef, start }) => (
                     <VisibilitySensor onChange={start} delayedCall>
                       <span
@@ -74,7 +74,7 @@ const Counter = () => {
                 <i class="fa-solid fa-heart-pulse"></i>
               </div>
               <div className="text-center">
-                <CountUp start={0} end={2578} duration={3}>
+                <CountUp start={0} end={2578} duration={2}>
                   {({ countUpRef, start }) => (
                     <VisibilitySensor onChange={start} delayedCall>
                       <span

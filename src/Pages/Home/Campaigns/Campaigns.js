@@ -56,42 +56,44 @@ const Campaigns = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto my-24 flex flex-col items-center w-full">
-      <div className="flex flex-col -mb-10">
-        <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
-          Our Campaigns
-        </h2>
-        <hr className="border w-[10%] my-3 border-primary  mx-auto" />
-        <span className="my-3 text-center">
-          Encourage new donors to join and continue to give blood. We have total
-          sixty thousands donor centers and visit thousands of other venues on
-          various occasions.
-        </span>
-      </div>
-      <div class="card-body w-full">
-        <div>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
-          >
-            {campaigns.map((campaign) => (
-              <SwiperSlide>
-                <CampaignCard key={campaign._id} campaign={campaign} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+    <div className="bg-gray-50">
+      <div className="max-w-7xl mx-auto my-24 flex flex-col items-center w-full">
+        <div className="flex flex-col -mb-10">
+          <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
+            Our Campaigns
+          </h2>
+          <hr className="border w-[10%] my-3 border-primary  mx-auto" />
+          <span className="my-3 text-center">
+            Encourage new donors to join and continue to give blood. We have
+            total sixty thousands donor centers and visit thousands of other
+            venues on various occasions.
+          </span>
         </div>
+        <div class="card-body w-full">
+          <div>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >
+              {campaigns.map((campaign) => (
+                <SwiperSlide>
+                  <CampaignCard key={campaign._id} campaign={campaign} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+        <button className="btn mb-5 border-0 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary hover:bg-gray-600 transition-all duration-300">
+          Load All campaigns
+        </button>
       </div>
-      <button className="btn mb-5 border-0 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary hover:bg-gray-600 transition-all duration-300">
-        Load All campaigns
-      </button>
     </div>
   );
 };

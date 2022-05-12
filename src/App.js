@@ -12,8 +12,8 @@ import NavContact from "./Pages/Shared/Navbar/NavContact";
 function App() {
   return (
     <div>
-      <NavContact />
       <Navbar>
+        <NavContact />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
