@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const AppointmentForm = () => {
+const AppointmentForm = ({ width }) => {
   const {
     register,
     handleSubmit,
@@ -12,7 +12,7 @@ const AppointmentForm = () => {
 
   return (
     <>
-      <div class="w-full lg:w-1/2 rounded-3xl shadow-lg overflow-hidden">
+      <div class={`w-full lg:${width} rounded-3xl shadow-lg overflow-hidden`}>
         <h2 className="bg-primary text-white font-bold text-3xl text-center py-6 uppercase">
           Request Appointment
         </h2>

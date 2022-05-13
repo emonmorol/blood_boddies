@@ -1,23 +1,20 @@
 import React from "react";
+import AppointmentForm from "../ReqAppointmentForm/AppointmentForm";
 
 const AppointmentModal = () => {
   return (
     <div>
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+      <input type="checkbox" id="appointment-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">
-            Congratulations random Interner user!
-          </h3>
-          <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-          <div class="modal-action">
-            <label for="my-modal-6" class="btn">
-              Yay!
-            </label>
-          </div>
+        <div class="modal-box p-0 rounded-3xl">
+          <label
+            for="appointment-modal"
+            class="btn btn-sm btn-circle absolute right-2 top-2"
+          >
+            ✕
+          </label>
+
+          <AppointmentForm width={"w-full"} />
         </div>
       </div>
     </div>

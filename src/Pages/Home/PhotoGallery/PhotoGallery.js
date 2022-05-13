@@ -1,8 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
-import { styled } from "@mui/material/styles";
 import { createTheme, useMediaQuery } from "@mui/material";
 
 const PhotoGallery = () => {
@@ -18,16 +16,6 @@ const PhotoGallery = () => {
   const matchesXs = useMediaQuery(theme.breakpoints.up("xs"));
   const matchesSm = useMediaQuery(theme.breakpoints.up("sm"));
   const matchesLg = useMediaQuery(theme.breakpoints.up("lg"));
-
-  const Label = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(0.5),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-  }));
 
   const itemData = [
     {
@@ -125,20 +113,25 @@ const PhotoGallery = () => {
             spacing={2}
           >
             {itemData.map((item, index) => (
-              <div className="rounded-2xl overflow-hidden shadow" key={index}>
-                <img
-                  src={`${item.img}?w=162&auto=format`}
-                  srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-                  alt={item.title}
-                  loading="lazy"
-                  style={{
-                    borderBottomLeftRadius: 4,
-                    borderBottomRightRadius: 4,
-                    display: "block",
-                    width: "100%",
-                  }}
-                />
-                <Label className="py-2">{item.title}</Label>
+              <div className="bg-gray-600 rounded-2xl cursor-grab">
+                <div
+                  className="rounded-2xl overflow-hidden shadow opacity-100 hover:opacity-40 transition-all duration-400"
+                  key={index}
+                >
+                  <img
+                    src={`${item.img}?w=162&auto=format`}
+                    srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
+                    alt={item.title}
+                    loading="lazy"
+                    style={{
+                      borderBottomLeftRadius: 4,
+                      borderBottomRightRadius: 4,
+                      display: "block",
+                      width: "100%",
+                    }}
+                  />
+                  {/* <Label className="py-2">{item.title}</Label> */}
+                </div>
               </div>
             ))}
           </Masonry>
