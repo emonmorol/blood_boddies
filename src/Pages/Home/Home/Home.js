@@ -6,6 +6,7 @@ import Counter from "../Counter/Counter";
 import DonarView from "../DonarView/DonarView";
 import DonationProcess from "../DonationProcess/DonationProcess";
 import Introduction from "../Introduction/Introduction";
+import PhotoGallery from "../PhotoGallery/PhotoGallery";
 import ReqAppointmentForm from "../ReqAppointmentForm/ReqAppointmentForm";
 import RequestAppointment from "../RequestAppointment/RequestAppointment";
 import Sponsors from "../Sponsors/Sponsors";
@@ -25,6 +26,7 @@ const Home = () => {
       <Volunteers />
       <BeVolunteer />
       <Sponsors />
+      <PhotoGallery />
     </>
   );
 };

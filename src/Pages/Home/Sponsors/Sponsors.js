@@ -25,7 +25,7 @@ const Sponsors = () => {
           The sponsors who give their valuable amount to fulfill our mission.
         </span>
       </div>
-      <div class="card-body w-full">
+      <div class="card-body w-full m-5">
         <div>
           <Swiper
             slidesPerView={6}
