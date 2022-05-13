@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const VolunteerCard = ({ volunteer }) => {
   const { image, name, post } = volunteer;
   return (
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card bg-base-100 shadow-xl">
       <figure className="pt-3 px-5 bg-white">
         <img src={image} alt="Shoes" />
       </figure>

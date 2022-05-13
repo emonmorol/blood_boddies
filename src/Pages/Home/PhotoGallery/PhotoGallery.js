@@ -3,8 +3,22 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 import { styled } from "@mui/material/styles";
+import { createTheme, useMediaQuery } from "@mui/material";
 
 const PhotoGallery = () => {
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        lg: 1200,
+      },
+    },
+  });
+  const matchesXs = useMediaQuery(theme.breakpoints.up("xs"));
+  const matchesSm = useMediaQuery(theme.breakpoints.up("sm"));
+  const matchesLg = useMediaQuery(theme.breakpoints.up("lg"));
+
   const Label = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
@@ -99,8 +113,17 @@ const PhotoGallery = () => {
         </span>
       </div>
       <div className="mx-auto">
-        <Box sx={{ width: 1050, minHeight: 829 }}>
-          <Masonry columns={3} spacing={2}>
+        <Box
+          sx={
+            (matchesLg && { width: 1050, minHeight: 829 }) ||
+            (matchesSm && { width: 600, minHeight: 400 }) ||
+            (matchesXs && { width: 320, minHeight: 300 })
+          }
+        >
+          <Masonry
+            columns={(matchesLg && 3) || (matchesSm && 2) || (matchesXs && 1)}
+            spacing={2}
+          >
             {itemData.map((item, index) => (
               <div className="rounded-2xl overflow-hidden shadow" key={index}>
                 <img

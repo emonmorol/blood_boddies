@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ children }) => {
   const navigations = (
     <>
       <li>
-        <Link to="/home">Home</Link>
+        <NavLink to="/home">Home</NavLink>
       </li>
       <li tabIndex="0">
-        <Link to="#">
+        <NavLink to="/pages">
           Pages
           <svg
             class="fill-current"
@@ -19,27 +19,27 @@ const Navbar = ({ children }) => {
           >
             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
           </svg>
-        </Link>
+        </NavLink>
         <ul class="p-2 bg-white">
           <li>
-            <Link to="#">Submenu 1</Link>
+            <NavLink to="#">Submenu 1</NavLink>
           </li>
           <li>
-            <Link to="#">Submenu 2</Link>
+            <NavLink to="#">Submenu 2</NavLink>
           </li>
         </ul>
       </li>
       <li>
-        <Link to="/about">About Us</Link>
+        <NavLink to="/about">About Us</NavLink>
       </li>
       <li>
-        <Link to="/campaign">Campaign</Link>
+        <NavLink to="/campaign">Campaign</NavLink>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <NavLink to="/blogs">Blogs</NavLink>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
+        <NavLink to="/contact">Contact</NavLink>
       </li>
     </>
   );
@@ -51,10 +51,10 @@ const Navbar = ({ children }) => {
         <div className="bg-base-100 shadow  sticky top-0 z-50">
           <div class="w-full navbar bg-base-100 max-w-7xl mx-auto">
             <div class="flex-1 px-2 mx-2">
-              <Link to="/" class="btn btn-ghost font-extrabold text-xl">
+              <NavLink to="/" class="btn btn-ghost font-extrabold text-xl">
                 <span>Blood</span>
                 <span className="text-primary"> Buddies</span>{" "}
-              </Link>
+              </NavLink>
             </div>
             <div class="flex-none lg:hidden">
               <label for="my-drawer-3" class="btn btn-square btn-ghost">

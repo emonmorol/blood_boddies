@@ -16,9 +16,12 @@ const RequestAppointment = () => {
           </p>
         </div>
         <div className="w-full md:w-2/3 lg:w-1/3">
-          <button className="text-2xl bg-primary border-4 border-primary font-semibold uppercase text-white px-6 py-3 hover:text-black hover:bg-transparent transition-all duration-300">
+          <label
+            htmlFor="my-modal-6"
+            className="btn text-lg bg-primary rounded-none border-4 border-primary font-semibold uppercase text-white px-6 hover:text-black hover:bg-transparent transition-all duration-300"
+          >
             Request Appointment
-          </button>
+          </label>
         </div>
       </div>
     </div>
