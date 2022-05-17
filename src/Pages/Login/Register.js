@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import signup from "../../Images/register.jpg";
 import Social from "./Social";
@@ -19,6 +19,16 @@ const Register = () => {
     console.log(data);
     createUserWithEmailAndPassword(data.email, data.password);
   };
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  let from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
 
   let errorMessage;
   if (error) {
