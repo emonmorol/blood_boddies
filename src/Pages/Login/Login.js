@@ -32,11 +32,11 @@ const Login = () => {
               Login
             </button>
             <div className="mt-2 flex justify-between">
-              <small className="text-red-400 font-semibold cursor-pointer">
+              <small className="text-blue-400 font-semibold cursor-pointer">
                 Forget Password ?
               </small>
               <Link to="/register">
-                <small className="text-red-400 font-semibold">
+                <small className="text-blue-400 font-semibold">
                   New To Blood Buddies ?
                 </small>
               </Link>
