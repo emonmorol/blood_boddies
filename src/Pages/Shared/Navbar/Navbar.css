@@ -1,3 +1,4 @@
-nav a {
-  border-radius: 5px;
+nav li {
+  margin-right: 5px;
+  border-radius: 20px;
 }

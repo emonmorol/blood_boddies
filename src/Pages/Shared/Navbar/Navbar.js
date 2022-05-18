@@ -1,12 +1,14 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useAdmin from "../../../Hooks/useAdmin";
 import "./Navbar.css";
 
 const Navbar = ({ children }) => {
   const [user] = useAuthState(auth);
+  const [isAdmin] = useAdmin();
 
   return (
     <nav class="drawer drawer-end">
@@ -15,10 +17,10 @@ const Navbar = ({ children }) => {
         <div className="bg-base-100 shadow  sticky top-0 z-50">
           <div class="w-full navbar bg-base-100 max-w-7xl mx-auto">
             <div class="flex-1 px-2 mx-2">
-              <NavLink to="/" class="btn btn-ghost font-extrabold text-xl">
+              <Link to="/" class="btn btn-ghost font-extrabold text-xl">
                 <span>Blood</span>
                 <span className="text-primary"> Buddies</span>{" "}
-              </NavLink>
+              </Link>
             </div>
             <div class="flex-none lg:hidden">
               <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -41,10 +43,10 @@ const Navbar = ({ children }) => {
             <div class="flex-none hidden lg:block">
               <ul class="menu menu-horizontal">
                 <li>
-                  <NavLink to="/home">Home</NavLink>
+                  <Link to="/home">Home</Link>
                 </li>
                 <li tabIndex="0">
-                  <NavLink to="/pages">
+                  <Link to="/pages">
                     Pages
                     <svg
                       class="fill-current"
@@ -55,37 +57,42 @@ const Navbar = ({ children }) => {
                     >
                       <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                     </svg>
-                  </NavLink>
+                  </Link>
                   <ul class="p-2 bg-white">
                     <li>
-                      <NavLink to="/donor">Submenu 1</NavLink>
+                      <Link to="/donor">Submenu 1</Link>
                     </li>
                     <li>
-                      <NavLink to="/reciever">Submenu 2</NavLink>
+                      <Link to="/reciever">Submenu 2</Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <NavLink to="/about">About Us</NavLink>
+                  <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <NavLink to="/campaign">Campaign</NavLink>
+                  <Link to="/campaign">Campaign</Link>
                 </li>
                 <li>
-                  <NavLink to="/blogs">Blogs</NavLink>
+                  <Link to="/blogs">Blogs</Link>
                 </li>
                 <li>
-                  <NavLink to="/contact">Contact</NavLink>
+                  <Link to="/contact">Contact</Link>
                 </li>
+                {isAdmin && user && (
+                  <li>
+                    <Link to="/dashboard">DashBoard</Link>
+                  </li>
+                )}
                 {user ? (
                   <li>
-                    <NavLink onClick={() => signOut(auth)} to="/login">
+                    <Link onClick={() => signOut(auth)} to="/login">
                       SignOut
-                    </NavLink>
+                    </Link>
                   </li>
                 ) : (
                   <li>
-                    <NavLink to="/login">Login</NavLink>
+                    <Link to="/login">Login</Link>
                   </li>
                 )}
               </ul>
@@ -98,7 +105,7 @@ const Navbar = ({ children }) => {
         <label for="my-drawer-3" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
           <li>
-            <NavLink to="/home">Home</NavLink>
+            <Link to="/home">Home</Link>
           </li>
           <div class="collapse collapse-arrow border rounded-lg">
             <input type="checkbox" class="peer" />
@@ -106,28 +113,28 @@ const Navbar = ({ children }) => {
             <div class="collapse-content">
               <ul class="p-2 bg-white">
                 <li>
-                  <NavLink to="/donor">Submenu 1</NavLink>
+                  <Link to="/donor">Submenu 1</Link>
                 </li>
                 <li>
-                  <NavLink to="/reciever">Submenu 2</NavLink>
+                  <Link to="/reciever">Submenu 2</Link>
                 </li>
               </ul>
             </div>
           </div>
           <li>
-            <NavLink to="/about">About Us</NavLink>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <NavLink to="/campaign">Campaign</NavLink>
+            <Link to="/campaign">Campaign</Link>
           </li>
           <li>
-            <NavLink to="/blogs">Blogs</NavLink>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </nav>

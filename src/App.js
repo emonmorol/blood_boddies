@@ -1,4 +1,6 @@
+import { Dashboard } from "@mui/icons-material";
 import { Route, Routes } from "react-router-dom";
+import RequireAdmin from "./Authentication/RequireAdmin";
 import RequireAuth from "./Authentication/RequireAuth";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
@@ -18,6 +20,14 @@ function App() {
               <Route key={index} path={path} element={<Component />} />
             ))}
           </Route>
+          <Route
+            path="/dashboard"
+            element={
+              <RequireAdmin>
+                <Dashboard />
+              </RequireAdmin>
+            }
+          />
         </Routes>
         <Footer />
       </Navbar>
