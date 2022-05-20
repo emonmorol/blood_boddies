@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import baseAxios from "../../Api/instance";
 import auth from "../../firebase.init";
 import login from "../../Images/login.jpg";
 import Social from "./Social";
@@ -27,6 +28,16 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
+      (async () => {
+        const { data } = await baseAxios.put("/user", {
+          email: user.user.email,
+        });
+        if (data?.token) {
+          localStorage.setItem("accessJwtToken", data?.token);
+        }
+        console.log(data);
+      })();
+
       navigate(from, { replace: true });
     }
   }, [user, navigate, from]);

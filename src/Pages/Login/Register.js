@@ -34,6 +34,10 @@ const Register = () => {
         if (data.result.upsertedId) {
           toast.success("User Created Successfully");
         }
+        if (data?.token) {
+          localStorage.setItem("accessJwtToken", data?.token);
+        }
+        console.log(data);
       })();
 
       navigate(from, { replace: true });

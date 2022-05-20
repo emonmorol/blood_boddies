@@ -86,7 +86,13 @@ const Navbar = ({ children }) => {
                 )}
                 {user ? (
                   <li>
-                    <Link onClick={() => signOut(auth)} to="/login">
+                    <Link
+                      onClick={() => {
+                        localStorage.removeItem("accessJwtToken");
+                        signOut(auth);
+                      }}
+                      to="/login"
+                    >
                       SignOut<i class="fa-solid fa-right-from-bracket"></i>
                     </Link>
                   </li>

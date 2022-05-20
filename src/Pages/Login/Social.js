@@ -3,6 +3,7 @@ import auth from "../../firebase.init";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import baseAxios from "../../Api/instance";
+import { toast } from "react-toastify";
 
 const Social = () => {
   //creating user
@@ -19,6 +20,12 @@ const Social = () => {
         const { data } = await baseAxios.put("/user", {
           email: user.user.email,
         });
+        if (data.result.upsertedId) {
+          toast.success("User Created Successfully");
+        }
+        if (data?.token) {
+          localStorage.setItem("accessJwtToken", data?.token);
+        }
         console.log(data);
       })();
 

@@ -114,15 +114,21 @@ const CheckoutForm = ({ appointInfo }) => {
         <p className="mt-5 -mb-5 text-red-600 text-center">{cardError}</p>
       )}
 
-      <button
-        type="submit"
-        className={`btn btn-accent mt-10 w-full text-white font-bold uppercase ${
-          processing && "loading"
-        }`}
-        disabled={!stripe || !elements || !clientSecret}
-      >
-        Pay
-      </button>
+      <div className="w-full flex justify-center items-center">
+        <span className="flex-1 text-gray-500 mt-10  text-lg font-medium rounded-lg">
+          Your Service charged will be
+          <span className="text-2xl font-bold"> $5 </span>
+        </span>
+        <button
+          type="submit"
+          className={`flex-1 w-full btn btn-accent mt-10 text-white font-bold uppercase ${
+            processing && "loading"
+          }`}
+          disabled={!stripe || !elements || !clientSecret}
+        >
+          Pay
+        </button>
+      </div>
     </form>
   );
 };
