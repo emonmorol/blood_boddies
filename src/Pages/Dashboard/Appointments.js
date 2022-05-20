@@ -7,283 +7,59 @@ import {
   TableRow,
 } from "@mui/material";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
+import baseAxios from "../../Api/instance";
+import auth from "../../firebase.init";
 
 const Appointments = () => {
+  const [user] = useAuthState(auth);
+
   const columns = [
-    { id: "name", label: "Name", minWidth: 170 },
-    { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
     {
-      id: "population",
-      label: "Population",
+      id: "name",
+      label: "Name",
       minWidth: 170,
-      align: "right",
-      format: (value) => value.toLocaleString("en-US"),
+      align: "center",
     },
     {
-      id: "size",
-      label: "Size\u00a0(km\u00b2)",
+      id: "bloodGroup",
+      label: "Blood Group",
       minWidth: 170,
-      align: "right",
-      format: (value) => value.toLocaleString("en-US"),
+      align: "center",
     },
     {
-      id: "size2",
-      label: "Size2\u00a0(km\u00b2)",
+      id: "center",
+      label: "Donation Center",
       minWidth: 170,
-      align: "right",
-      format: (value) => value.toLocaleString("en-US"),
+      align: "center",
     },
     {
-      id: "size3",
-      label: "Size3\u00a0(km\u00b2)",
+      id: "date",
+      label: "Donation Date",
       minWidth: 170,
-      align: "right",
-      format: (value) => value.toLocaleString("en-US"),
+      align: "center",
+    },
+    {
+      id: "phone",
+      label: "Phone",
+      minWidth: 170,
+      align: "center",
     },
   ];
 
-  const rows = [
-    {
-      name: "India",
-      code: "IN",
-      population: 1324171354,
-      size: 3287263,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "China",
-      code: "CN",
-      population: 1403500365,
-      size: 9596961,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Italy",
-      code: "IT",
-      population: 60483973,
-      size: 301340,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "United States",
-      code: "US",
-      population: 327167434,
-      size: 9833520,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Canada",
-      code: "CA",
-      population: 37602103,
-      size: 9984670,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Australia",
-      code: "AU",
-      population: 25475400,
-      size: 7692024,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Germany",
-      code: "DE",
-      population: 83019200,
-      size: 357578,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Ireland",
-      code: "IE",
-      population: 4857000,
-      size: 70273,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Mexico",
-      code: "MX",
-      population: 126577691,
-      size: 1972550,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Japan",
-      code: "JP",
-      population: 126317000,
-      size: 377973,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "France",
-      code: "FR",
-      population: 67022000,
-      size: 640679,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "United Kingdom",
-      code: "GB",
-      population: 67545757,
-      size: 242495,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Russia",
-      code: "RU",
-      population: 146793744,
-      size: 17098246,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Nigeria",
-      code: "NG",
-      population: 200962417,
-      size: 923768,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Brazil",
-      code: "BR",
-      population: 210147125,
-      size: 8515767,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "India",
-      code: "IN",
-      population: 1324171354,
-      size: 3287263,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "China",
-      code: "CN",
-      population: 1403500365,
-      size: 9596961,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Italy",
-      code: "IT",
-      population: 60483973,
-      size: 301340,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "United States",
-      code: "US",
-      population: 327167434,
-      size: 9833520,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Canada",
-      code: "CA",
-      population: 37602103,
-      size: 9984670,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Australia",
-      code: "AU",
-      population: 25475400,
-      size: 7692024,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Germany",
-      code: "DE",
-      population: 83019200,
-      size: 357578,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Ireland",
-      code: "IE",
-      population: 4857000,
-      size: 70273,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Mexico",
-      code: "MX",
-      population: 126577691,
-      size: 1972550,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Japan",
-      code: "JP",
-      population: 126317000,
-      size: 377973,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "France",
-      code: "FR",
-      population: 67022000,
-      size: 640679,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "United Kingdom",
-      code: "GB",
-      population: 67545757,
-      size: 242495,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Russia",
-      code: "RU",
-      population: 146793744,
-      size: 17098246,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Nigeria",
-      code: "NG",
-      population: 200962417,
-      size: 923768,
-      size2: 9984670,
-      size3: 9984670,
-    },
-    {
-      name: "Brazil",
-      code: "BR",
-      population: 210147125,
-      size: 8515767,
-      size2: 9984670,
-      size3: 9984670,
-    },
-  ];
+  console.log(user.email);
+
+  const { data: appoints, isLoading } = useQuery("appointments", () =>
+    baseAxios.get(`/appointments?email=${user?.email}`)
+  );
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  console.log(appoints.data);
 
   return (
     <>
@@ -301,10 +77,17 @@ const Appointments = () => {
                   {column.label}
                 </TableCell>
               ))}
+              <TableCell
+                key={"action"}
+                align={"center"}
+                style={{ minWidth: 170 }}
+              >
+                Action
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => {
+            {appoints?.data?.map((row) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
@@ -317,6 +100,17 @@ const Appointments = () => {
                       </TableCell>
                     );
                   })}
+                  <TableCell key={"action"} align={"center"}>
+                    <div className="flex gap-3 justify-center">
+                      <Link
+                        to={`/dashboard/payment/${row._id}`}
+                        className="btn btn-xs"
+                      >
+                        Payment
+                      </Link>
+                      <button className="btn btn-xs">Cancel</button>
+                    </div>
+                  </TableCell>
                 </TableRow>
               );
             })}
