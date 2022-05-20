@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { format } from "date-fns";
 
 const AppointmentForm = ({ width }) => {
   const {
@@ -8,7 +11,17 @@ const AppointmentForm = ({ width }) => {
     formState: { errors },
   } = useForm();
   console.dir(errors);
-  const onSubmit = (data) => console.log(data);
+  const [newDate, setNewDate] = useState(new Date());
+  let formattedDate = format(newDate, "PP");
+
+  const handleDateChange = (date) => {
+    setNewDate(date);
+  };
+
+  console.log(formattedDate);
+  const onSubmit = (data) => {
+    console.log({ ...data, date: formattedDate });
+  };
 
   return (
     <>
@@ -28,7 +41,7 @@ const AppointmentForm = ({ width }) => {
                     required: "This Field Is Required",
                     minLength: {
                       value: 4,
-                      message: "Minimum Four Character", // JS only: <p>error message</p> TS only support string
+                      message: "Minimum Four Character",
                     },
                   })}
                   type="text"
@@ -52,7 +65,7 @@ const AppointmentForm = ({ width }) => {
                     required: "This Field Is Required",
                     pattern: {
                       value: /\S+@\S+\.\S+/,
-                      message: "Please Input A Valid Email", // JS only: <p>error message</p> TS only support string
+                      message: "Please Input A Valid Email",
                     },
                   })}
                   type="email"
@@ -69,7 +82,62 @@ const AppointmentForm = ({ width }) => {
             </div>
 
             <div className="flex justify-center mb-5 items-center gap-5 w-full">
-              <div class=" w-full relative">
+              <div class="w-4/5 relative">
+                <label class="label">
+                  <span class="label-text">Donation Date</span>
+                </label>
+                <DatePicker
+                  className="rounded-lg"
+                  selected={newDate}
+                  onChange={handleDateChange}
+                />
+                {/* <input
+                  {...register("date", {
+                    required: "This Field Is Required",
+                  })}
+                  type="text"
+                  placeholder="Type here"
+                  class="input input-bordered w-full hidden"
+                />
+                {errors?.date && (
+                  <span class="error label-text-alt">
+                    {" "}
+                    {errors?.date?.message}
+                  </span>
+                )} */}
+              </div>
+
+              <div class="w-full relative">
+                <label class="label">
+                  <span class="label-text">Contact Number</span>
+                </label>
+                <input
+                  {...register("phone", {
+                    required: "This Field Is Required",
+                    minLength: {
+                      value: 11,
+                      message: "Please Input A Valid Phone Number",
+                    },
+                    maxLength: {
+                      value: 11,
+                      message: "Please Input A Valid Phone Number",
+                    },
+                  })}
+                  type="number"
+                  placeholder="Contact Number"
+                  class="input input-bordered w-full"
+                />
+                {errors?.phone && (
+                  <span class="error label-text-alt">
+                    {" "}
+                    {errors?.phone?.message}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <div className="flex justify-center mb-5 items-center gap-5 w-full">
+              {/* <div class=" w-full relative">
                 <label class="label">
                   <span class="label-text">Donation Time</span>
                 </label>
@@ -87,38 +155,7 @@ const AppointmentForm = ({ width }) => {
                     {errors?.time?.message}
                   </span>
                 )}
-              </div>
-
-              <div class=" w-full relative">
-                <label class="label">
-                  <span class="label-text">Contact Number</span>
-                </label>
-                <input
-                  {...register("phone", {
-                    required: "This Field Is Required",
-                    minLength: {
-                      value: 11,
-                      message: "Please Input A Valid Phone Number", // JS only: <p>error message</p> TS only support string
-                    },
-                    maxLength: {
-                      value: 11,
-                      message: "Please Input A Valid Phone Number", // JS only: <p>error message</p> TS only support string
-                    },
-                  })}
-                  type="number"
-                  placeholder="Contact Number"
-                  class="input input-bordered w-full"
-                />
-                {errors?.phone && (
-                  <span class="error label-text-alt">
-                    {" "}
-                    {errors?.phone?.message}
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className="flex justify-center mb-5 items-center gap-5 w-full">
+              </div> */}
               <div class=" w-full relative">
                 <label class="label">
                   <span class="label-text">Donation Center</span>
@@ -135,26 +172,6 @@ const AppointmentForm = ({ width }) => {
                   <span class="error label-text-alt">
                     {" "}
                     {errors?.center?.message}
-                  </span>
-                )}
-              </div>
-
-              <div class=" w-full relative">
-                <label class="label">
-                  <span class="label-text">Donation Date</span>
-                </label>
-                <input
-                  {...register("date", {
-                    required: "This Field Is Required",
-                  })}
-                  type="text"
-                  placeholder="Type here"
-                  class="input input-bordered w-full"
-                />
-                {errors?.date && (
-                  <span class="error label-text-alt">
-                    {" "}
-                    {errors?.date?.message}
                   </span>
                 )}
               </div>
