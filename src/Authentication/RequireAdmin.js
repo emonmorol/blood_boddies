@@ -1,5 +1,5 @@
 // import { useAuthState } from "react-firebase-hooks/auth";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 // import auth from "../firebase.init";
 

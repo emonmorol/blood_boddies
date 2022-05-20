@@ -6,6 +6,7 @@ import baseAxios from "../../Api/instance";
 import auth from "../../firebase.init";
 import signup from "../../Images/register.jpg";
 import Social from "./Social";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -30,7 +31,9 @@ const Register = () => {
         const { data } = await baseAxios.put("/user", {
           email: user.user.email,
         });
-        console.log(data);
+        if (data.result.upsertedId) {
+          toast.success("User Created Successfully");
+        }
       })();
 
       navigate(from, { replace: true });

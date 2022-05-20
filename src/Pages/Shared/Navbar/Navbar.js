@@ -3,12 +3,12 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
-import useAdmin from "../../../Hooks/useAdmin";
+// import useAdmin from "../../../Hooks/useAdmin";
 import "./Navbar.css";
 
 const Navbar = ({ children }) => {
   const [user] = useAuthState(auth);
-  const [isAdmin] = useAdmin();
+  // const [isAdmin] = useAdmin();
 
   return (
     <nav class="drawer drawer-end">
@@ -79,15 +79,15 @@ const Navbar = ({ children }) => {
                 <li>
                   <Link to="/contact">Contact</Link>
                 </li>
-                {isAdmin && user && (
+                {user && (
                   <li>
-                    <Link to="/dashboard">DashBoard</Link>
+                    <Link to="/dashboard/appointments">DashBoard</Link>
                   </li>
                 )}
                 {user ? (
                   <li>
                     <Link onClick={() => signOut(auth)} to="/login">
-                      <i class="fa-solid fa-right-from-bracket ml-2"></i>
+                      SignOut<i class="fa-solid fa-right-from-bracket"></i>
                     </Link>
                   </li>
                 ) : (
@@ -133,9 +133,22 @@ const Navbar = ({ children }) => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+          {user && (
+            <li>
+              <Link to="/dashboard/appointments">DashBoard</Link>
+            </li>
+          )}
+          {user ? (
+            <li>
+              <Link onClick={() => signOut(auth)} to="/login">
+                SignOut<i class="fa-solid fa-right-from-bracket"></i>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
         </ul>
       </nav>
     </nav>
