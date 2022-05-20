@@ -87,7 +87,12 @@ const Appointments = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2>This is appointments</h2>
+      <div className="flex flex-col">
+        <h2 class="text-lg lg:text-4xl font-bold text-gray-600 uppercase text-center">
+          hello {user.displayName} , Your Appointments
+        </h2>
+        <hr className="border w-[10%] my-3 border-primary  mx-auto" />
+      </div>
       <TableContainer sx={{ width: "90%", maxHeight: "80vh" }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>

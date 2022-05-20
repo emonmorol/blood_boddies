@@ -67,10 +67,10 @@ const CheckoutForm = ({ appointInfo }) => {
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
-      if (transactionId) {
+      if (paymentIntent.id) {
         swal(
           "Payment Successful",
-          `Your Transaction Id Is ${transactionId}`,
+          `Your Transaction Id Is ${paymentIntent.id}`,
           "success"
         );
       }
