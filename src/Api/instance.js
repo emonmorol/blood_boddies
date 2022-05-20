@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseAxios = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://blood-buddies-server.herokuapp.com",
 });
 
 export default baseAxios;
