@@ -9,9 +9,10 @@ import {
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
 import baseAxios from "../../Api/instance";
+import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import swal from "sweetalert";
 
 const Appointments = () => {
   const [user] = useAuthState(auth);
@@ -49,20 +50,43 @@ const Appointments = () => {
     },
   ];
 
-  console.log(user.email);
-
-  const { data: appoints, isLoading } = useQuery("appointments", () =>
+  const {
+    data: appoints,
+    Loading,
+    refetch,
+  } = useQuery("appointments", () =>
     baseAxios.get(`/appointments?email=${user?.email}`)
   );
 
-  if (isLoading) {
+  const handleDelete = async (id) => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this Appointment ! ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        baseAxios.delete(`/appointments/${id}`).then((res) => {
+          if (res.data.deletedCount === 1) {
+            swal("Your Appointment has been Cancelled!", {
+              icon: "success",
+            });
+            refetch();
+          }
+        });
+      } else {
+        swal("If You Are in Need Of Blood We'll be there");
+      }
+    });
+  };
+
+  if (Loading) {
     return <p>Loading...</p>;
   }
 
-  console.log(appoints.data);
-
   return (
-    <>
+    <div className="flex flex-col items-center">
       <h2>This is appointments</h2>
       <TableContainer sx={{ width: "90%", maxHeight: "80vh" }}>
         <Table stickyHeader aria-label="sticky table">
@@ -104,11 +128,16 @@ const Appointments = () => {
                     <div className="flex gap-3 justify-center">
                       <Link
                         to={`/dashboard/payment/${row._id}`}
-                        className="btn btn-xs"
+                        className="btn btn-xs text-white"
                       >
                         Payment
                       </Link>
-                      <button className="btn btn-xs">Cancel</button>
+                      <button
+                        onClick={() => handleDelete(row._id)}
+                        className="btn btn-xs btn-error"
+                      >
+                        Cancel
+                      </button>
                     </div>
                   </TableCell>
                 </TableRow>
@@ -117,7 +146,7 @@ const Appointments = () => {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </div>
   );
 };
 
