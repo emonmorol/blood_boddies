@@ -20,25 +20,30 @@ const Payment = () => {
   }
   console.log(data);
   return (
-    <section className="mx-auto p-4 w-full lg:w-1/2">
+    <section className="mx-auto w-full lg:w-1/2 border-2 p-4 lg:p-10 rounded-2xl shadow-xl">
       <div className="flex flex-col w-full gap-5">
-        <h2>Your Appointment</h2>
-        <span className="bg-white px-5 py-3 text-lg font-medium">
+        <div className="flex flex-col">
+          <h2 class="text-4xl font-bold text-gray-600 uppercase text-center">
+            pay to proceed
+          </h2>
+          <hr className="border w-[10%] my-3 border-primary  mx-auto" />
+        </div>
+        <span className="bg-white px-5 py-3 text-lg font-medium rounded-lg">
           {data.data.name}
         </span>
-        <span className="bg-white px-5 py-3 text-lg font-medium">
+        <span className="bg-white px-5 py-3 text-lg font-medium rounded-lg">
           {data.data.email}
         </span>
-        <span className="bg-white px-5 py-3 text-lg font-medium">
+        <span className="bg-white px-5 py-3 text-lg font-medium rounded-lg">
           Date: {data.data.date}
         </span>
-        <span className="bg-white px-5 py-3 text-lg font-medium">
+        <span className="bg-white px-5 py-3 text-lg font-medium rounded-lg">
           {data.data.center}
         </span>
-        <span className="bg-white px-5 py-3 text-lg font-medium">
+        <span className="bg-white px-5 py-3 text-lg font-medium rounded-lg">
           Blood Group : {data.data.bloodGroup}
         </span>
-        <span className="bg-red-400 text-white px-5 py-3 text-lg font-medium">
+        <span className="bg-red-400 text-white px-5 py-3 text-lg font-medium rounded-lg">
           Pay <span className="text-2xl"> $5 </span> for service Charge
         </span>
 

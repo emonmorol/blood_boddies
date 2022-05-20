@@ -126,18 +126,31 @@ const Appointments = () => {
                   })}
                   <TableCell key={"action"} align={"center"}>
                     <div className="flex gap-3 justify-center">
-                      <Link
-                        to={`/dashboard/payment/${row._id}`}
-                        className="btn btn-xs text-white"
-                      >
-                        Payment
-                      </Link>
-                      <button
-                        onClick={() => handleDelete(row._id)}
-                        className="btn btn-xs btn-error"
-                      >
-                        Cancel
-                      </button>
+                      {row?.transactionId ? (
+                        <div
+                          class="tooltip z-30"
+                          data-tip={`${row?.transactionId}`}
+                        >
+                          <button className="bg-green-200 text-green-500 rounded-full uppercase font-bold py-2 px-10 text-xs">
+                            Paid
+                          </button>
+                        </div>
+                      ) : (
+                        <>
+                          <Link
+                            to={`/dashboard/payment/${row._id}`}
+                            className="bg-blue-200 text-blue-500 rounded-full uppercase font-bold py-2 px-5 text-xs"
+                          >
+                            Payment
+                          </Link>
+                          <button
+                            onClick={() => handleDelete(row._id)}
+                            className="bg-red-200 text-red-500 rounded-full uppercase font-bold py-2 px-5 text-xs"
+                          >
+                            Cancel
+                          </button>
+                        </>
+                      )}
                     </div>
                   </TableCell>
                 </TableRow>

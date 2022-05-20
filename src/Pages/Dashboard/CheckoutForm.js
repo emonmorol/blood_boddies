@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import baseAxios from "../../Api/instance";
+import swal from "sweetalert";
 
 const CheckoutForm = ({ appointInfo }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const [success, setSuccess] = useState("");
   const [processing, setProcessing] = useState(false);
-  const [transectionId, setTransectionId] = useState("");
+  const [transactionId, setTransactionId] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -24,6 +24,8 @@ const CheckoutForm = ({ appointInfo }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setProcessing(true);
 
     if (!stripe || !elements) {
       return;
@@ -58,19 +60,35 @@ const CheckoutForm = ({ appointInfo }) => {
         },
       });
 
+    console.log(paymentIntent);
     if (intentError) {
       setCardError(intentError?.message);
-      setSuccess("");
       setProcessing(false);
     } else {
       setCardError("");
-      setTransectionId(paymentIntent.id);
-      setSuccess("Congrats! Your Payment Is completed");
+      setTransactionId(paymentIntent.id);
+      if (transactionId) {
+        swal(
+          "Payment Successful",
+          `Your Transaction Id Is ${transactionId}`,
+          "success"
+        );
+      }
+      console.log(transactionId);
 
       const payment = {
         appointmentId: appointInfo._id,
         transactionId: paymentIntent.id,
       };
+
+      const { data } = await baseAxios.put(
+        `/appointments/${appointInfo._id}`,
+        payment
+      );
+      if (data) {
+        setProcessing(false);
+        console.log(data);
+      }
     }
   };
 
@@ -95,9 +113,12 @@ const CheckoutForm = ({ appointInfo }) => {
       {cardError && (
         <p className="mt-5 -mb-5 text-red-600 text-center">{cardError}</p>
       )}
+
       <button
         type="submit"
-        className="btn btn-accent mt-10 w-full text-white font-bold uppercase"
+        className={`btn btn-accent mt-10 w-full text-white font-bold uppercase ${
+          processing && "loading"
+        }`}
         disabled={!stripe || !elements || !clientSecret}
       >
         Pay
