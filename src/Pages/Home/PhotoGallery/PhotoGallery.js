@@ -113,11 +113,8 @@ const PhotoGallery = () => {
             spacing={2}
           >
             {itemData.map((item, index) => (
-              <div className="bg-gray-600 rounded-2xl cursor-grab">
-                <div
-                  className="rounded-2xl overflow-hidden shadow opacity-100 hover:opacity-40 transition-all duration-400"
-                  key={index}
-                >
+              <div key={index} className="bg-gray-600 rounded-2xl cursor-grab">
+                <div className="rounded-2xl overflow-hidden shadow opacity-100 hover:opacity-40 transition-all duration-400">
                   <img
                     src={`${item.img}?w=162&auto=format`}
                     srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}

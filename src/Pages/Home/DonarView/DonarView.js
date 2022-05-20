@@ -85,9 +85,9 @@ const DonarView = () => {
                   modules={[Pagination]}
                   className="mySwiper"
                 >
-                  {membersView.map((view) => (
+                  {membersView.map((view, index) => (
                     <SwiperSlide>
-                      <Views key={view._id} view={view} />
+                      <Views key={index} view={view} />
                     </SwiperSlide>
                   ))}
                 </Swiper>

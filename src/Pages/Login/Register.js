@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import baseAxios from "../../Api/instance";
 import auth from "../../firebase.init";
 import signup from "../../Images/register.jpg";
 import Social from "./Social";
@@ -16,7 +17,6 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
     createUserWithEmailAndPassword(data.email, data.password);
   };
   const location = useLocation();
@@ -26,6 +26,13 @@ const Register = () => {
 
   useEffect(() => {
     if (user) {
+      (async () => {
+        const { data } = await baseAxios.put("/user", {
+          email: user.user.email,
+        });
+        console.log(data);
+      })();
+
       navigate(from, { replace: true });
     }
   }, [user, navigate, from]);
@@ -39,8 +46,6 @@ const Register = () => {
   if (loading) {
     return <p className="text-center my-20 text-medium">Loading...</p>;
   }
-
-  console.log(user);
 
   return (
     <div className="h-[100vh] bg-login-bg bg-fixed">

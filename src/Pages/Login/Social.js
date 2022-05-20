@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import auth from "../../firebase.init";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import baseAxios from "../../Api/instance";
 
 const Social = () => {
   //creating user
@@ -14,6 +15,13 @@ const Social = () => {
 
   useEffect(() => {
     if (user) {
+      (async () => {
+        const { data } = await baseAxios.put("/user", {
+          email: user.user.email,
+        });
+        console.log(data);
+      })();
+
       navigate(from, { replace: true });
     }
   }, [user, navigate, from]);
@@ -27,8 +35,6 @@ const Social = () => {
   if (loading) {
     return <p className="text-center my-20 text-medium">Loading...</p>;
   }
-
-  // console.log(user);
 
   return (
     <>

@@ -81,9 +81,9 @@ const Campaigns = () => {
               modules={[Pagination, Navigation]}
               className="mySwiper"
             >
-              {campaigns.map((campaign) => (
+              {campaigns.map((campaign, index) => (
                 <SwiperSlide>
-                  <CampaignCard key={campaign._id} campaign={campaign} />
+                  <CampaignCard key={index} campaign={campaign} />
                 </SwiperSlide>
               ))}
             </Swiper>

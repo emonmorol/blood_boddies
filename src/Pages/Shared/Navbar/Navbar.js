@@ -87,7 +87,7 @@ const Navbar = ({ children }) => {
                 {user ? (
                   <li>
                     <Link onClick={() => signOut(auth)} to="/login">
-                      SignOut
+                      <i class="fa-solid fa-right-from-bracket ml-2"></i>
                     </Link>
                   </li>
                 ) : (

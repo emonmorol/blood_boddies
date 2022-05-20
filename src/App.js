@@ -1,7 +1,7 @@
-import { Dashboard } from "@mui/icons-material";
 import { Route, Routes } from "react-router-dom";
 import RequireAdmin from "./Authentication/RequireAdmin";
 import RequireAuth from "./Authentication/RequireAuth";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
 import { privateRoute } from "./Routes/PrivateRoute";
