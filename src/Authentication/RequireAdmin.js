@@ -6,7 +6,7 @@ import useAdmin from "../Hooks/useAdmin";
 function RequireAdmin({ children }) {
   const [isAdmin] = useAdmin();
   let location = useLocation();
-  console.log(isAdmin);
+  // console.log(isAdmin);
 
   //   if (loading) {
   //     return <p className="text-center my-20 text-medium">Loading...</p>;
