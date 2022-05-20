@@ -18,6 +18,7 @@ const AppointmentForm = ({ width }) => {
     reset,
     formState: { errors },
   } = useForm();
+  const [bloodGroup, setBloodGroup] = useState("A+");
 
   const navigate = useNavigate();
 
@@ -91,56 +92,6 @@ const AppointmentForm = ({ width }) => {
               )}
             </div>
 
-            {/* <div class=" w-full relative">
-              <label class="label">
-                <span class="label-text">Your Email</span>
-              </label>
-              <input
-                {...register("email", {
-                  pattern: {
-                    value: /\S+@\S+\.\S+/,
-                    message: "Please Input A Valid Email",
-                  },
-                })}
-                type="email"
-                value={user?.email}
-                disabled
-                placeholder="Type here"
-                class="input input-bordered w-full"
-              />
-              {errors?.email && (
-                <span class="error label-text-alt">
-                  {" "}
-                  {errors?.email?.message}
-                </span>
-              )}
-            </div> */}
-
-            <div class="w-full relative">
-              <label class="label">
-                <span class="label-text">Donation Date</span>
-              </label>
-              <DatePicker
-                className="rounded-lg w-full"
-                selected={newDate}
-                onChange={handleDateChange}
-              />
-              {/* <input
-                  {...register("date", {
-                    required: "This Field Is Required",
-                  })}
-                  type="text"
-                  placeholder="Type here"
-                  class="input input-bordered w-full hidden"
-                />
-                {errors?.date && (
-                  <span class="error label-text-alt">
-                    {" "}
-                    {errors?.date?.message}
-                  </span>
-                )} */}
-            </div>
-
             <div class="w-full relative">
               <label class="label">
                 <span class="label-text">Contact Number</span>
@@ -169,8 +120,8 @@ const AppointmentForm = ({ width }) => {
               )}
             </div>
 
-            <div className="flex justify-center mb-5 items-center gap-5 w-full">
-              <div class=" w-full relative">
+            <div className="flex justify-center items-center gap-5 w-full">
+              <div class="w-full relative">
                 <label class="label">
                   <span class="label-text">Donation Center</span>
                 </label>
@@ -188,6 +139,39 @@ const AppointmentForm = ({ width }) => {
                     {errors?.center?.message}
                   </span>
                 )}
+              </div>
+            </div>
+
+            <div className="flex w-full justify-center items-center gap-x-5">
+              <div class="w-full relative">
+                <label class="label">
+                  <span class="label-text">Your Blood Group</span>
+                </label>
+                <select
+                  {...register("bloodGroup")}
+                  onChange={(e) => setBloodGroup(e.target.value)}
+                  class="input input-bordered w-full"
+                >
+                  <option value="A+">A+</option>
+                  <option value="O+">O+</option>
+                  <option value="B+">B+</option>
+                  <option value="AB+">AB+</option>
+                  <option value="A-">A-</option>
+                  <option value="O-">O-</option>
+                  <option value="B-">B-</option>
+                  <option value="AB-">AB-</option>
+                </select>
+              </div>
+
+              <div class="w-full relative">
+                <label class="label">
+                  <span class="label-text">Donation Date</span>
+                </label>
+                <DatePicker
+                  className="rounded-lg border-2 border-gray-200 w-full"
+                  selected={newDate}
+                  onChange={handleDateChange}
+                />
               </div>
             </div>
 
