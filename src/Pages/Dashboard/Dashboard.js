@@ -24,6 +24,9 @@ const Dashboard = () => {
             <li>
               <Link to="/dashboard/donors">Donors</Link>
             </li>
+            <li>
+              <Link to="/dashboard/gallery">Photo Gallery</Link>
+            </li>
           </ul>
         </div>
       </div>

@@ -19,7 +19,7 @@ const PhotoGallery = () => {
 
   const itemData = [
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyXMvtIk7nis1sQ1lisIcUOqIRGrm2nYJRnw&usqp=CAU",
+      img: "lala",
       title: "Fern",
     },
     {
@@ -73,18 +73,6 @@ const PhotoGallery = () => {
     {
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi4hGEOrY6psxPruCKhbeB1eWmXuhqh4s9Tg&usqp=CAU",
       title: "Hats",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-      title: "Tomato basil",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1627328561499-a3584d4ee4f7",
-      title: "Mountain",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-      title: "Bike",
     },
   ];
 
