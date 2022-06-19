@@ -37,7 +37,7 @@ const Register = () => {
         if (data?.token) {
           localStorage.setItem("accessJwtToken", data?.token);
         }
-        console.log(data);
+        data;
       })();
 
       navigate(from, { replace: true });
@@ -56,12 +56,12 @@ const Register = () => {
 
   return (
     <div className="h-[100vh] bg-login-bg bg-fixed">
-      <div class="card card-side bg-base-100 border max-w-7xl mx-auto my-10">
+      <div className="card card-side bg-base-100 border max-w-7xl mx-auto my-10">
         <figure className="w-3/5">
           <img src={signup} alt="Movie" />
         </figure>
-        <div class="w-2/5 card-body flex justify-center flex-col items-center gap-5">
-          <h2 class="card-title text-3xl uppercase font-bold text-primary">
+        <div className="w-2/5 card-body flex justify-center flex-col items-center gap-5">
+          <h2 className="card-title text-3xl uppercase font-bold text-primary">
             Create Account
           </h2>
           <form
@@ -77,7 +77,7 @@ const Register = () => {
                   message: "Name Is required",
                 },
               })}
-              class="input input-bordered w-full"
+              className="input input-bordered w-full"
             />
             <small className="text-error mb-6 mt-1 ml-2">
               {errors.name && errors.name.message}
@@ -96,7 +96,7 @@ const Register = () => {
                   message: "Provide Valid Email",
                 },
               })}
-              class="input input-bordered w-full"
+              className="input input-bordered w-full"
             />
             <small className="text-error mb-6 mt-1 ml-2">
               {errors.email && errors.email.message}
@@ -115,7 +115,7 @@ const Register = () => {
                   message: "Password Length Minimum 6 character",
                 },
               })}
-              class="input input-bordered w-full"
+              className="input input-bordered w-full"
             />
             <small className="text-error mb-6 mt-1 ml-2">
               {errors.password && errors.password.message}
@@ -124,7 +124,7 @@ const Register = () => {
             {errorMessage}
             <button
               type="submit"
-              class="input input-bordered rounded-full bg-primary text-white font-bold uppercase mx-auto w-full mb-6"
+              className="input input-bordered rounded-full bg-primary text-white font-bold uppercase mx-auto w-full mb-6"
             >
               Register
             </button>

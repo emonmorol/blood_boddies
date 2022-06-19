@@ -9,7 +9,7 @@ const useAdmin = () => {
 
   useEffect(() => {
     if (user) {
-      console.log(user.email);
+      user.email;
       (async () => {
         const { data } = await baseAxios.get(`/user?email=${user.email}`);
         if (data?.role && data?.role === "admin") {

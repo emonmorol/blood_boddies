@@ -7,7 +7,6 @@ const useGallery = () => {
     isLoading,
     refetch,
   } = useQuery("photoGallary", () => baseAxios.get("/photo"));
-  console.log(photos);
   return [photos, isLoading, refetch];
 };
 

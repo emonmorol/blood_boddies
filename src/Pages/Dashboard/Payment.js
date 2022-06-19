@@ -18,12 +18,12 @@ const Payment = () => {
   if (isLoading) {
     return <p>loading ...</p>;
   }
-  console.log(data);
+  data;
   return (
     <section className="mx-auto w-full lg:w-1/2 border-2 p-4 lg:p-10 rounded-2xl shadow-xl">
       <div className="flex flex-col w-full gap-5">
         <div className="flex flex-col">
-          <h2 class="text-4xl font-bold text-gray-600 uppercase text-center">
+          <h2 className="text-4xl font-bold text-gray-600 uppercase text-center">
             pay to proceed
           </h2>
           <hr className="border w-[10%] my-3 border-primary  mx-auto" />

@@ -65,7 +65,7 @@ const DonarView = () => {
           JOIN WITH US AND SAVE LIFE
         </h2>
         <div className="absolute top-full -translate-y-[35%] md:-translate-y-1/2 lg:-translate-y-1/2 w-full lg:w-1/2 p-3 lg:p-0">
-          <div class="card lg:card-side flex-col-reverse lg:flex-row bg-base-100 shadow-xl">
+          <div className="card lg:card-side flex-col-reverse lg:flex-row bg-base-100 shadow-xl">
             <figure className="w-1/2 h-full">
               <img
                 className="hidden lg:flex h-full object-cover"
@@ -73,7 +73,7 @@ const DonarView = () => {
                 alt="Album"
               />
             </figure>
-            <div class="relative card-body w-full lg:w-1/2">
+            <div className="relative card-body w-full lg:w-1/2">
               <div>
                 <Swiper
                   slidesPerView={1}
@@ -85,9 +85,9 @@ const DonarView = () => {
                   modules={[Pagination]}
                   className="mySwiper"
                 >
-                  {membersView.map((view, index) => (
-                    <SwiperSlide>
-                      <Views key={index} view={view} />
+                  {membersView?.map((view) => (
+                    <SwiperSlide key={view._id}>
+                      <Views view={view} />
                     </SwiperSlide>
                   ))}
                 </Swiper>

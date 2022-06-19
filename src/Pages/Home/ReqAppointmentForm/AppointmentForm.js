@@ -35,14 +35,14 @@ const AppointmentForm = ({ width }) => {
       date: formattedDate,
       email: user?.email,
     };
-    console.log(newAppointment);
+    newAppointment;
     if (user) {
       (async () => {
         const { data } = await baseAxios.post(
           `/appointments?email=${user?.email}&date=${formattedDate}`,
           newAppointment
         );
-        console.log(data);
+        data;
         if (data?.success) {
           toast.success("SuccessFully Submitted");
           reset();
@@ -59,7 +59,9 @@ const AppointmentForm = ({ width }) => {
 
   return (
     <>
-      <div class={`w-full lg:${width} rounded-3xl shadow-lg overflow-hidden`}>
+      <div
+        className={`w-full lg:${width} rounded-3xl shadow-lg overflow-hidden`}
+      >
         <h2 className="bg-primary text-white font-bold text-3xl text-center py-6 uppercase">
           Request Appointment
         </h2>
@@ -68,9 +70,9 @@ const AppointmentForm = ({ width }) => {
             className="flex flex-col gap-5"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <div class=" w-full relative">
-              <label class="label">
-                <span class="label-text">Your Name</span>
+            <div className=" w-full relative">
+              <label className="label">
+                <span className="label-text">Your Name</span>
               </label>
               <input
                 {...register("name", {
@@ -82,19 +84,19 @@ const AppointmentForm = ({ width }) => {
                 })}
                 type="text"
                 placeholder="Name"
-                class="input input-bordered w-full"
+                className="input input-bordered w-full"
               />
               {errors?.name && (
-                <span class="error label-text-alt">
+                <span className="error label-text-alt">
                   {" "}
                   {errors?.name?.message}
                 </span>
               )}
             </div>
 
-            <div class="w-full relative">
-              <label class="label">
-                <span class="label-text">Contact Number</span>
+            <div className="w-full relative">
+              <label className="label">
+                <span className="label-text">Contact Number</span>
               </label>
               <input
                 {...register("phone", {
@@ -110,10 +112,10 @@ const AppointmentForm = ({ width }) => {
                 })}
                 type="number"
                 placeholder="Contact Number"
-                class="input input-bordered w-full"
+                className="input input-bordered w-full"
               />
               {errors?.phone && (
-                <span class="error label-text-alt">
+                <span className="error label-text-alt">
                   {" "}
                   {errors?.phone?.message}
                 </span>
@@ -121,9 +123,9 @@ const AppointmentForm = ({ width }) => {
             </div>
 
             <div className="flex justify-center items-center gap-5 w-full">
-              <div class="w-full relative">
-                <label class="label">
-                  <span class="label-text">Donation Center</span>
+              <div className="w-full relative">
+                <label className="label">
+                  <span className="label-text">Donation Center</span>
                 </label>
                 <input
                   {...register("center", {
@@ -131,10 +133,10 @@ const AppointmentForm = ({ width }) => {
                   })}
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 />
                 {errors?.center && (
-                  <span class="error label-text-alt">
+                  <span className="error label-text-alt">
                     {" "}
                     {errors?.center?.message}
                   </span>
@@ -143,14 +145,14 @@ const AppointmentForm = ({ width }) => {
             </div>
 
             <div className="flex w-full justify-center items-center gap-x-5">
-              <div class="w-full relative">
-                <label class="label">
-                  <span class="label-text">Your Blood Group</span>
+              <div className="w-full relative">
+                <label className="label">
+                  <span className="label-text">Your Blood Group</span>
                 </label>
                 <select
                   {...register("bloodGroup")}
                   onChange={(e) => setBloodGroup(e.target.value)}
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                 >
                   <option value="A+">A+</option>
                   <option value="O+">O+</option>
@@ -163,9 +165,9 @@ const AppointmentForm = ({ width }) => {
                 </select>
               </div>
 
-              <div class="w-full relative">
-                <label class="label">
-                  <span class="label-text">Donation Date</span>
+              <div className="w-full relative">
+                <label className="label">
+                  <span className="label-text">Donation Date</span>
                 </label>
                 <DatePicker
                   className="rounded-lg border-2 border-gray-200 w-full"
@@ -175,9 +177,9 @@ const AppointmentForm = ({ width }) => {
               </div>
             </div>
 
-            <div class="form-control mb-5 w-full">
-              <label class="label">
-                <span class="label-text">Share Your Thought</span>
+            <div className="form-control mb-5 w-full">
+              <label className="label">
+                <span className="label-text">Share Your Thought</span>
               </label>
               <textarea
                 {...register("opinion", {
@@ -186,11 +188,11 @@ const AppointmentForm = ({ width }) => {
                     message: "Please Input A Valid Phone Number",
                   },
                 })}
-                class="textarea textarea-bordered h-24"
+                className="textarea textarea-bordered h-24"
                 placeholder="Type Here"
               ></textarea>
               {errors?.opinion && (
-                <span class="error label-text-alt">
+                <span className="error label-text-alt">
                   {" "}
                   {errors?.opinion?.message}
                 </span>

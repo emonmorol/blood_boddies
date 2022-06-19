@@ -11,7 +11,7 @@ const Counter = () => {
           <div className="grid grid-cols-1 py-10 gap-5 md:grid-cols-2 lg:grid-cols-4">
             <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 flex flex-col justify-center">
               <div className="text-6xl py-5 mb-2 px-[1.45rem] text-gray-500 hover:text-primary  cursor-text mx-auto transition-all duration-300">
-                <i class="fa-solid fa-medal"></i>
+                <i className="fa-solid fa-medal"></i>
               </div>
               <div className="text-center">
                 <CountUp start={0} end={1346} duration={2}>
@@ -31,7 +31,7 @@ const Counter = () => {
             </div>
             <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 flex flex-col justify-center">
               <div className="text-6xl py-5 mb-2 px-[1.45rem] text-gray-500 hover:text-primary  cursor-text mx-auto transition-all duration-300">
-                <i class="fa-solid fa-users"></i>
+                <i className="fa-solid fa-users"></i>
               </div>
               <div className="text-center">
                 <CountUp start={0} end={3568} duration={2}>
@@ -51,7 +51,7 @@ const Counter = () => {
             </div>
             <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 flex flex-col justify-center">
               <div className="text-6xl py-5 mb-2 px-[1.45rem] text-gray-500 hover:text-primary  cursor-text mx-auto transition-all duration-300">
-                <i class="fa-solid fa-stethoscope"></i>
+                <i className="fa-solid fa-stethoscope"></i>
               </div>
               <div className="text-center">
                 <CountUp start={0} end={3235} duration={2}>
@@ -71,7 +71,7 @@ const Counter = () => {
             </div>
             <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 flex flex-col justify-center">
               <div className="text-6xl py-5 px-[1.45rem] text-gray-500 hover:text-primary cursor-text mx-auto transition-all duration-300">
-                <i class="fa-solid fa-heart-pulse"></i>
+                <i className="fa-solid fa-heart-pulse"></i>
               </div>
               <div className="text-center">
                 <CountUp start={0} end={2578} duration={2}>

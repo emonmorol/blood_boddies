@@ -13,10 +13,10 @@ const AllGallery = () => {
   const { handleSubmit, register, reset } = useForm();
   const [isUploading, setIsUploading] = useState(false);
   const [photos, isLoading, refetch] = useGallery();
-  console.log(photos);
+  photos;
 
   const onSubmit = (data) => {
-    console.log(data.image[0]);
+    data.image[0];
     const formData = new FormData();
     formData.set("image", data.image[0]);
     if (data.image[0]) {
@@ -44,7 +44,7 @@ const AllGallery = () => {
           });
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => error);
   };
 
   const theme = createTheme({
@@ -88,7 +88,7 @@ const AllGallery = () => {
       </form>
       <div className="relative bg-gray-100 w-full flex flex-col justify-center pb-20 z-10">
         <div className="flex flex-col my-10 ">
-          <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
+          <h2 className="text-5xl font-bold text-gray-600 uppercase text-center">
             PHOTO GALLERY
           </h2>
           <hr className="border w-[10%] my-3 border-primary  mx-auto" />

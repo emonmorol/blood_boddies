@@ -26,7 +26,7 @@ const Social = () => {
         if (data?.token) {
           localStorage.setItem("accessJwtToken", data?.token);
         }
-        console.log(data);
+        data;
       })();
 
       navigate(from, { replace: true });
@@ -45,19 +45,19 @@ const Social = () => {
 
   return (
     <>
-      <div class="divider">OR</div>
+      <div className="divider">OR</div>
       {errorMessage}
       <button
         onClick={() => signInWithGoogle()}
-        class="btn rounded-full text-white w-full"
+        className="btn rounded-full text-white w-full"
       >
-        <i class="fa-brands fa-google mr-2"></i>Continue With Google
+        <i className="fa-brands fa-google mr-2"></i>Continue With Google
       </button>
-      {/* <button class="btn rounded-full text-white w-full">
-        <i class="fa-brands fa-github mr-2"></i>Continue With Github
+      {/* <button className="btn rounded-full text-white w-full">
+        <i className="fa-brands fa-github mr-2"></i>Continue With Github
       </button>
-      <button class="btn rounded-full text-white w-full">
-        <i class="fa-brands fa-facebook-f mr-2"></i>Continue With Facebook
+      <button className="btn rounded-full text-white w-full">
+        <i className="fa-brands fa-facebook-f mr-2"></i>Continue With Facebook
       </button> */}
     </>
   );

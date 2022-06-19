@@ -28,7 +28,7 @@ const PhotoGallery = () => {
   return (
     <div className="bg-gray-100 w-full flex flex-col justify-center py-20">
       <div className="flex flex-col my-10 ">
-        <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
+        <h2 className="text-5xl font-bold text-gray-600 uppercase text-center">
           PHOTO GALLERY
         </h2>
         <hr className="border w-[10%] my-3 border-primary  mx-auto" />
@@ -49,7 +49,7 @@ const PhotoGallery = () => {
             columns={(matchesLg && 3) || (matchesSm && 2) || (matchesXs && 1)}
             spacing={2}
           >
-            {itemData.map((item, index) => (
+            {itemData?.map((item, index) => (
               <div key={index} className="bg-gray-600 rounded-2xl cursor-grab">
                 <div className="rounded-2xl overflow-hidden shadow opacity-100 hover:opacity-40 transition-all duration-400">
                   <img

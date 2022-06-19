@@ -88,7 +88,7 @@ const Appointments = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col">
-        <h2 class="text-lg lg:text-4xl font-bold text-gray-600 uppercase text-center">
+        <h2 className="text-lg lg:text-4xl font-bold text-gray-600 uppercase text-center">
           hello {user.displayName} , Your Appointments
         </h2>
         <hr className="border w-[10%] my-3 border-primary  mx-auto" />
@@ -133,7 +133,7 @@ const Appointments = () => {
                     <div className="flex gap-3 justify-center">
                       {row?.transactionId ? (
                         <div
-                          class="tooltip z-30"
+                          className="tooltip z-30"
                           data-tip={`${row?.transactionId}`}
                         >
                           <button className="bg-green-200 text-green-500 rounded-full uppercase font-bold py-2 px-10 text-xs">

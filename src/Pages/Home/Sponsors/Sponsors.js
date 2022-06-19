@@ -17,7 +17,7 @@ const Sponsors = () => {
   return (
     <div className="max-w-7xl mx-auto my-24 flex flex-col items-center w-full">
       <div className="flex flex-col -mb-10">
-        <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
+        <h2 className="text-5xl font-bold text-gray-600 uppercase text-center">
           OUR SPONSORS
         </h2>
         <hr className="border w-[10%] my-3 border-primary  mx-auto" />
@@ -25,7 +25,7 @@ const Sponsors = () => {
           The sponsors who give their valuable amount to fulfill our mission.
         </span>
       </div>
-      <div class="card-body w-full m-5">
+      <div className="card-body w-full m-5">
         <div>
           <Swiper
             slidesPerView={6}

@@ -45,15 +45,3 @@ baseAxios.interceptors.response.use(
 );
 
 export default baseAxios;
-
-// import axios from "axios";
-// import { signOut } from "firebase/auth";
-// import { useNavigate } from "react-router-dom";
-// import auth from "../firebase.init";
-
-// const baseAxios = axios.create({
-//   baseURL: "http://localhost:5000",
-//   headers: {
-//     authorization: localStorage.getItem("accessJwtToken"),
-//   },
-// });

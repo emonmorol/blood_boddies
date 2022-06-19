@@ -58,7 +58,7 @@ const Campaigns = () => {
     <div className="bg-gray-50">
       <div className="max-w-7xl mx-auto my-24 flex flex-col items-center w-full">
         <div className="flex flex-col -mb-10">
-          <h2 class="text-5xl font-bold text-gray-600 uppercase text-center">
+          <h2 className="text-5xl font-bold text-gray-600 uppercase text-center">
             Our Campaigns
           </h2>
           <hr className="border w-[10%] my-3 border-primary  mx-auto" />
@@ -68,7 +68,7 @@ const Campaigns = () => {
             venues on various occasions.
           </span>
         </div>
-        <div class="card-body w-full">
+        <div className="card-body w-full">
           <div>
             <Swiper
               slidesPerView={1}
@@ -81,9 +81,9 @@ const Campaigns = () => {
               modules={[Pagination, Navigation]}
               className="mySwiper"
             >
-              {campaigns.map((campaign, index) => (
-                <SwiperSlide>
-                  <CampaignCard key={index} campaign={campaign} />
+              {campaigns?.map((campaign) => (
+                <SwiperSlide key={campaign._id}>
+                  <CampaignCard campaign={campaign} />
                 </SwiperSlide>
               ))}
             </Swiper>
