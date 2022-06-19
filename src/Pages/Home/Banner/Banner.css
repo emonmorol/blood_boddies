@@ -1,5 +1,6 @@
 .banner-inner {
   position: relative;
+  z-index: -1;
 }
 
 .banner-inner::before {
@@ -9,9 +10,10 @@
   left: 0;
   width: 7rem;
   height: 7rem;
-  border-bottom: 6px solid rgb(213, 64, 64);
-  border-left: 6px solid rgb(213, 64, 64);
+  border-bottom: 4px solid rgb(213, 64, 64);
+  border-left: 4px solid rgb(213, 64, 64);
   transition: all 0.5s ease-in-out;
+  z-index: -1;
 }
 .banner-inner::after {
   content: " ";
@@ -20,9 +22,10 @@
   right: 0;
   width: 7rem;
   height: 7rem;
-  border-top: 6px solid rgb(213, 64, 64);
-  border-right: 6px solid rgb(213, 64, 64);
+  border-top: 4px solid rgb(213, 64, 64);
+  border-right: 4px solid rgb(213, 64, 64);
   transition: all 0.5s ease-in-out;
+  z-index: -1;
 }
 .banner-inner:hover::before {
   width: 100%;
