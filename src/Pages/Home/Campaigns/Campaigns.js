@@ -9,6 +9,7 @@ import event1 from "../../../Images/event_1.png";
 import event2 from "../../../Images/event_2.png";
 import event3 from "../../../Images/event_3.png";
 import event4 from "../../../Images/event_4.png";
+import "./Campaign.css";
 
 const Campaigns = () => {
   const campaigns = [
@@ -55,7 +56,7 @@ const Campaigns = () => {
   ];
 
   return (
-    <div className="bg-gray-50">
+    <div className="campaign bg-gray-50">
       <div className="max-w-7xl mx-auto my-24 flex flex-col items-center w-full">
         <div className="flex flex-col -mb-10">
           <h2 className="text-5xl font-bold text-gray-600 uppercase text-center">
@@ -69,7 +70,7 @@ const Campaigns = () => {
           </span>
         </div>
         <div className="card-body w-full">
-          <div>
+          <div className="relative">
             <Swiper
               slidesPerView={1}
               spaceBetween={30}

@@ -6,55 +6,18 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper";
 import Views from "./Views";
 import viewImage from "../../../Images/member-view-img.jpg";
+import { useQuery } from "react-query";
+import baseAxios from "../../../Api/instance";
 
 const DonarView = () => {
-  const membersView = [
-    {
-      _id: 1,
-      memberType: "Donor",
-      viewContext:
-        "I have been a donor since high school. Although I have not been a donor every year, I always want to give to the human race. I love to help others! Moreover it gives a real peace in my mind.",
-      image: "https://randomuser.me/api/portraits/women/90.jpg",
-      name: "Megan Diaz",
-      email: "megan.diaz@email.com",
-    },
-    {
-      _id: 2,
-      memberType: "Donor",
-      viewContext:
-        "I proudly donate blood on a regular basis because it gives others something they desperately need to survive. Just knowing I can make a difference in someone else's life makes me feel great!",
-      image: "https://randomuser.me/api/portraits/men/14.jpg",
-      name: "Leonard Murray",
-      email: "leonard.murray@email.com",
-    },
-    {
-      _id: 3,
-      memberType: "Donor",
-      viewContext:
-        "I have been a donor since high school. Although I have not been a donor every year, I always want to give to the human race. I love to help others! Moreover it gives a real peace in my mind.",
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
-      name: "Lance Meyer",
-      email: "lance.meyer@email.com",
-    },
-    {
-      _id: 4,
-      memberType: "Donor",
-      viewContext:
-        "I proudly donate blood on a regular basis because it gives others something they desperately need to survive. Just knowing I can make a difference in someone else's life makes me feel great!",
-      image: "https://randomuser.me/api/portraits/women/35.jpg",
-      name: "Noah Sanchez",
-      email: "noah.sanchez@email.com",
-    },
-    {
-      _id: 5,
-      memberType: "Donor",
-      viewContext:
-        "I have been a donor since high school. Although I have not been a donor every year, I always want to give to the human race. I love to help others! Moreover it gives a real peace in my mind.",
-      image: "https://randomuser.me/api/portraits/men/99.jpg",
-      name: "Ross Williams",
-      email: "ross.williams@email.com",
-    },
-  ];
+  const { data: membersView, isLoading } = useQuery("reviewData", () =>
+    baseAxios.get("/reviews")
+  );
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  console.log(membersView.data);
 
   return (
     <div className="">
@@ -85,7 +48,7 @@ const DonarView = () => {
                   modules={[Pagination]}
                   className="mySwiper"
                 >
-                  {membersView?.map((view) => (
+                  {membersView?.data?.map((view) => (
                     <SwiperSlide key={view._id}>
                       <Views view={view} />
                     </SwiperSlide>
@@ -98,9 +61,7 @@ const DonarView = () => {
       </div>
       <div className="flex justify-center items-end bg-gray-100 bg-fixed bg-cover min-h-[65vh] md:min-h-[50vh] lg:min-h-[40vh]">
         <div className="">
-          <button className="btn mb-5 rounded-full text-xl font-medium uppercase text-gray-200 px-10 btn-black hover:text-white  hover:bg-primary hover:border-primary transition-all duration-300">
-            Share your opinion
-          </button>
+          <button className="button mb-5 text-xl">Share your opinion</button>
         </div>
       </div>
     </div>

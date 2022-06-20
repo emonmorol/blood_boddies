@@ -6,9 +6,7 @@ const BeVolunteer = () => {
       <h2 className="text-6xl text-gray-50 font-extrabold">
         JOIN WITH US AND SAVE LIFE
       </h2>
-      <button className="btn my-5 border-0 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary hover:bg-gray-600 transition-all duration-300">
-        Become volunteer
-      </button>
+      <button className="button my-5 text-xl">Become volunteer</button>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const PhotoGallery = () => {
     return <p>Loading ..</p>;
   }
 
-  const itemData = photos?.data?.slice(0, 8);
+  const itemData = photos?.data?.slice(0, 11);
 
   return (
     <div className="bg-gray-100 w-full flex flex-col justify-center py-20">
@@ -71,10 +71,8 @@ const PhotoGallery = () => {
           </Masonry>
         </Box>
       </div>
-      <Link to="/dashboard/gallery">
-        <button className="btn mb-5 border-0 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary hover:bg-gray-600 transition-all duration-300">
-          See All Images
-        </button>
+      <Link className="block mx-auto mt-6" to="/dashboard/gallery">
+        <button className="button text-lg">See All Images</button>
       </Link>
     </div>
   );
