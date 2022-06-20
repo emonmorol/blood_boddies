@@ -60,7 +60,6 @@ const CheckoutForm = ({ appointInfo }) => {
         },
       });
 
-    paymentIntent;
     if (intentError) {
       setCardError(intentError?.message);
       setProcessing(false);
@@ -74,7 +73,6 @@ const CheckoutForm = ({ appointInfo }) => {
           "success"
         );
       }
-      transactionId;
 
       const payment = {
         appointmentId: appointInfo._id,
@@ -87,7 +85,6 @@ const CheckoutForm = ({ appointInfo }) => {
       );
       if (data) {
         setProcessing(false);
-        data;
       }
     }
   };

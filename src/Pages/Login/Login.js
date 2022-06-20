@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import baseAxios from "../../Api/instance";
+import Spinner from "../../components/Spinner/Spinner";
 import auth from "../../firebase.init";
 import login from "../../Images/login.jpg";
 import Social from "./Social";
@@ -35,7 +36,6 @@ const Login = () => {
         if (data?.token) {
           localStorage.setItem("accessJwtToken", data?.token);
         }
-        data;
       })();
 
       navigate(from, { replace: true });
@@ -49,7 +49,7 @@ const Login = () => {
     );
   }
   if (loading) {
-    return <p className="text-center my-20 text-medium">Loading...</p>;
+    return <Spinner />;
   }
 
   return (

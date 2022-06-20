@@ -8,15 +8,14 @@ import useGallery from "../../Hooks/useGallery";
 import Box from "@mui/material/Box";
 import Masonry from "@mui/lab/Masonry";
 import { createTheme, useMediaQuery } from "@mui/material";
+import Spinner from "../../components/Spinner/Spinner";
 
 const AllGallery = () => {
   const { handleSubmit, register, reset } = useForm();
   const [isUploading, setIsUploading] = useState(false);
   const [photos, isLoading, refetch] = useGallery();
-  photos;
 
   const onSubmit = (data) => {
-    data.image[0];
     const formData = new FormData();
     formData.set("image", data.image[0]);
     if (data.image[0]) {
@@ -60,7 +59,7 @@ const AllGallery = () => {
   const matchesSm = useMediaQuery(theme.breakpoints.up("sm"));
   const matchesLg = useMediaQuery(theme.breakpoints.up("lg"));
   if (isLoading) {
-    return <p>Loading ..</p>;
+    return <Spinner />;
   }
 
   return (

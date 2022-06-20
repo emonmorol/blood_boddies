@@ -7,6 +7,7 @@ import auth from "../../firebase.init";
 import signup from "../../Images/register.jpg";
 import Social from "./Social";
 import { toast } from "react-toastify";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -37,7 +38,6 @@ const Register = () => {
         if (data?.token) {
           localStorage.setItem("accessJwtToken", data?.token);
         }
-        data;
       })();
 
       navigate(from, { replace: true });
@@ -51,7 +51,7 @@ const Register = () => {
     );
   }
   if (loading) {
-    return <p className="text-center my-20 text-medium">Loading...</p>;
+    return <Spinner />;
   }
 
   return (

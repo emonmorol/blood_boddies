@@ -4,6 +4,7 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import baseAxios from "../../Api/instance";
 import { toast } from "react-toastify";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Social = () => {
   //creating user
@@ -26,7 +27,6 @@ const Social = () => {
         if (data?.token) {
           localStorage.setItem("accessJwtToken", data?.token);
         }
-        data;
       })();
 
       navigate(from, { replace: true });
@@ -40,7 +40,7 @@ const Social = () => {
     );
   }
   if (loading) {
-    return <p className="text-center my-20 text-medium">Loading...</p>;
+    return <Spinner />;
   }
 
   return (

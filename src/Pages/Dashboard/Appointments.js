@@ -13,6 +13,7 @@ import baseAxios from "../../Api/instance";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import swal from "sweetalert";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Appointments = () => {
   const [user] = useAuthState(auth);
@@ -82,7 +83,7 @@ const Appointments = () => {
   };
 
   if (Loading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (

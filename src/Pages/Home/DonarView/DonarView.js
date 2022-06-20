@@ -8,6 +8,7 @@ import Views from "./Views";
 import viewImage from "../../../Images/member-view-img.jpg";
 import { useQuery } from "react-query";
 import baseAxios from "../../../Api/instance";
+import Spinner from "../../../components/Spinner/Spinner";
 
 const DonarView = () => {
   const { data: membersView, isLoading } = useQuery("reviewData", () =>
@@ -15,7 +16,7 @@ const DonarView = () => {
   );
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
   console.log(membersView.data);
 
