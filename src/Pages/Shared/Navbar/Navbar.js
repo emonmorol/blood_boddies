@@ -1,7 +1,8 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import CustomLink from "../../../components/CustomLink";
 import auth from "../../../firebase.init";
 // import useAdmin from "../../../Hooks/useAdmin";
 import "./Navbar.css";
@@ -17,10 +18,13 @@ const Navbar = ({ children }) => {
         <div className="bg-base-100 shadow  sticky top-0 z-50">
           <div className="w-full navbar bg-base-100 max-w-7xl mx-auto">
             <div className="flex-1 px-2 mx-2">
-              <Link to="/" className="btn btn-ghost font-extrabold text-xl">
+              <CustomLink
+                to="/"
+                className="btn btn-ghost font-extrabold text-xl"
+              >
                 <span>Blood</span>
                 <span className="text-primary"> Buddies</span>{" "}
-              </Link>
+              </CustomLink>
             </div>
             <div className="flex-none lg:hidden">
               <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
@@ -41,30 +45,32 @@ const Navbar = ({ children }) => {
             </div>
 
             <div className="flex-none hidden lg:block">
-              <ul className="menu menu-horizontal">
+              <ul className="menu-horizontal">
                 <li>
-                  <Link to="/home">Home</Link>
+                  <CustomLink to="/home">Home</CustomLink>
                 </li>
                 <li>
-                  <Link to="/about">About Us</Link>
+                  <CustomLink to="/about">About Us</CustomLink>
                 </li>
                 <li>
-                  <Link to="/campaign">Campaign</Link>
+                  <CustomLink to="/campaign">Campaign</CustomLink>
                 </li>
                 <li>
-                  <Link to="/blogs">Blogs</Link>
+                  <CustomLink to="/blogs">Blogs</CustomLink>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <CustomLink to="/contact">Contact</CustomLink>
                 </li>
                 {user && (
                   <li>
-                    <Link to="/dashboard/appointments">DashBoard</Link>
+                    <CustomLink to="/dashboard/appointments">
+                      DashBoard
+                    </CustomLink>
                   </li>
                 )}
                 {user ? (
                   <li>
-                    <Link
+                    <CustomLink
                       onClick={() => {
                         localStorage.removeItem("accessJwtToken");
                         signOut(auth);
@@ -72,11 +78,11 @@ const Navbar = ({ children }) => {
                       to="/login"
                     >
                       <i className="fa-solid fa-right-from-bracket"></i>
-                    </Link>
+                    </CustomLink>
                   </li>
                 ) : (
                   <li>
-                    <Link to="/login">Login</Link>
+                    <CustomLink to="/login">Login</CustomLink>
                   </li>
                 )}
               </ul>
@@ -89,7 +95,7 @@ const Navbar = ({ children }) => {
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
           <li>
-            <Link to="/home">Home</Link>
+            <NavLink to="/home">Home</NavLink>
           </li>
           <div className="collapse collapse-arrow border rounded-lg">
             <input type="checkbox" className="peer" />
@@ -97,40 +103,40 @@ const Navbar = ({ children }) => {
             <div className="collapse-content">
               <ul className="p-2 bg-white">
                 <li>
-                  <Link to="/donor">Submenu 1</Link>
+                  <NavLink to="/donor">Submenu 1</NavLink>
                 </li>
                 <li>
-                  <Link to="/reciever">Submenu 2</Link>
+                  <NavLink to="/reciever">Submenu 2</NavLink>
                 </li>
               </ul>
             </div>
           </div>
           <li>
-            <Link to="/about">About Us</Link>
+            <NavLink to="/about">About Us</NavLink>
           </li>
           <li>
-            <Link to="/campaign">Campaign</Link>
+            <NavLink to="/campaign">Campaign</NavLink>
           </li>
           <li>
-            <Link to="/blogs">Blogs</Link>
+            <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           {user && (
             <li>
-              <Link to="/dashboard/appointments">DashBoard</Link>
+              <NavLink to="/dashboard/appointments">DashBoard</NavLink>
             </li>
           )}
           {user ? (
             <li>
-              <Link onClick={() => signOut(auth)} to="/login">
+              <NavLink onClick={() => signOut(auth)} to="/login">
                 <i className="fa-solid fa-right-from-bracket"></i>
-              </Link>
+              </NavLink>
             </li>
           ) : (
             <li>
-              <Link to="/login">Login</Link>
+              <NavLink to="/login">Login</NavLink>
             </li>
           )}
         </ul>

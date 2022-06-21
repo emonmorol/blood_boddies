@@ -90,9 +90,7 @@ const Campaigns = () => {
             </Swiper>
           </div>
         </div>
-        <button className="btn mb-5 border-0 rounded-full text-xl font-medium uppercase px-20 text-white  btn-primary hover:bg-gray-600 transition-all duration-300">
-          Load All campaigns
-        </button>
+        <button className="button">Load All campaigns</button>
       </div>
     </div>
   );

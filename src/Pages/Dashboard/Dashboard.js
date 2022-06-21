@@ -25,6 +25,9 @@ const Dashboard = () => {
               <NavLink to="/dashboard/donors">Donors</NavLink>
             </li>
             <li>
+              <NavLink to="/dashboard/volunteers">Volunteers</NavLink>
+            </li>
+            <li>
               <NavLink to="/dashboard/gallery">Photo Gallery</NavLink>
             </li>
           </ul>
