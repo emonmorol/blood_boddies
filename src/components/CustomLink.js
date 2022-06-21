@@ -7,7 +7,16 @@ function CustomLink({ children, to, ...props }) {
   return (
     <div>
       <Link
-        style={{ textDecoration: match ? "underline" : "none" }}
+        className="mr-3.5 hover:text-underline"
+        style={
+          match
+            ? {
+                textDecoration: "underline",
+              }
+            : {
+                textDecoration: "none",
+              }
+        }
         to={to}
         {...props}
       >
