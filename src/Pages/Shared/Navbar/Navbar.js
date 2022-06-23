@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CustomLink from "../../../components/CustomLink";
 import auth from "../../../firebase.init";
 // import useAdmin from "../../../Hooks/useAdmin";
@@ -18,13 +18,10 @@ const Navbar = ({ children }) => {
         <div className="bg-base-100 shadow  sticky top-0 z-50">
           <div className="w-full navbar bg-base-100 max-w-7xl mx-auto">
             <div className="flex-1 px-2 mx-2">
-              <CustomLink
-                to="/"
-                className="btn btn-ghost font-extrabold text-xl"
-              >
+              <Link to="/" className="btn btn-ghost font-extrabold text-xl">
                 <span>Blood</span>
                 <span className="text-primary"> Buddies</span>{" "}
-              </CustomLink>
+              </Link>
             </div>
             <div className="flex-none lg:hidden">
               <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">

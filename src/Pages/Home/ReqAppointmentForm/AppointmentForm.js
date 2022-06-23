@@ -35,14 +35,12 @@ const AppointmentForm = ({ width }) => {
       date: formattedDate,
       email: user?.email,
     };
-    newAppointment;
     if (user) {
       (async () => {
         const { data } = await baseAxios.post(
           `/appointments?email=${user?.email}&date=${formattedDate}`,
           newAppointment
         );
-        data;
         if (data?.success) {
           toast.success("SuccessFully Submitted");
           reset();
